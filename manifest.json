@@ -1,0 +1,31 @@
+{
+  "name": "NECRONOMICON 404 — Grimorio Interactivo",
+  "short_name": "Necronomicon 404",
+  "description": "Grimorio interactivo de horror cósmico ficticio. Archivo restaurado parcialmente.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0804",
+  "theme_color": "#0a0804",
+  "lang": "es",
+  "categories": ["books", "entertainment"],
+  "icons": [
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

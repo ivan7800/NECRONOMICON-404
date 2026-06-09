@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NECRONOMICON 404 — Grimorio interactivo de horror cósmico. Contenido enteramente ficticio.">
+  <meta name="theme-color" content="#0a0804">
+  <title>NECRONOMICON 404</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mode-dark" data-page="cover">
+
+  <!-- RUIDO DE FONDO (canvas) -->
+  <canvas id="noise-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <nav id="main-nav" aria-label="Navegación principal" hidden>
+    <div class="nav-inner">
+      <button class="nav-logo" data-goto="cover" aria-label="Portada">
+        <span class="sigil-small" aria-hidden="true">✦</span>
+        <span>NECRONOMICON 404</span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><button data-goto="index-page" class="nav-btn">Índice</button></li>
+        <li><button data-goto="glossary" class="nav-btn">Glosario</button></li>
+        <li><button data-goto="library" class="nav-btn">Biblioteca</button></li>
+        <li><button data-goto="authors" class="nav-btn">Autores</button></li>
+        <li><button data-goto="timeline" class="nav-btn">Cronología</button></li>
+        <li><button data-goto="generators" class="nav-btn">Generadores</button></li>
+        <li><button data-goto="archive" class="nav-btn">Archivo</button></li>
+        <li><button data-goto="bestiary" class="nav-btn">Bestiario</button></li>
+        <li>
+          <button id="mode-toggle" class="nav-btn mode-btn" aria-label="Cambiar modo visual">
+            <span id="mode-label">Pergamino</span>
+          </button>
+        </li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Menú móvil -->
+    <div class="nav-mobile" id="nav-mobile" hidden>
+      <button data-goto="index-page" class="nav-btn">Índice</button>
+      <button data-goto="glossary" class="nav-btn">Glosario</button>
+      <button data-goto="library" class="nav-btn">Biblioteca</button>
+      <button data-goto="authors" class="nav-btn">Autores</button>
+      <button data-goto="timeline" class="nav-btn">Cronología</button>
+      <button data-goto="generators" class="nav-btn">Generadores</button>
+      <button data-goto="archive" class="nav-btn">Archivo</button>
+      <button data-goto="bestiary" class="nav-btn">Bestiario</button>
+      <button id="mode-toggle-mobile" class="nav-btn">☽ Cambiar modo</button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════ PORTADA ══════════════════════════════ -->
+  <section id="page-cover" class="page active" aria-label="Portada del grimorio">
+    <div class="cover-inner">
+      <div class="cover-border" aria-hidden="true">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <div class="edge top"></div>
+        <div class="edge bottom"></div>
+        <div class="edge left"></div>
+        <div class="edge right"></div>
+      </div>
+
+      <p class="cover-warning" aria-label="Advertencia">
+        CLASIFICADO · ARCHIVO RESTRINGIDO · CONSULTA BAJO RESPONSABILIDAD PROPIA
+      </p>
+
+      <div class="cover-sigil" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="sigil-main">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          <polygon points="100,15 185,155 15,155" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <polygon points="100,185 15,45 185,45" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <circle cx="100" cy="100" r="8" fill="currentColor" opacity="0.6"/>
+          <line x1="100" y1="10" x2="100" y2="190" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+          <line x1="10" y1="100" x2="190" y2="100" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+          <line x1="29" y1="29" x2="171" y2="171" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+          <line x1="171" y1="29" x2="29" y2="171" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+          <text x="100" y="104" text-anchor="middle" font-size="14" fill="currentColor" opacity="0.7" font-family="serif">✦</text>
+        </svg>
+      </div>
+
+      <h1 class="cover-title">
+        <span class="cover-title-main">NECRONOMICON</span>
+        <span class="cover-title-sub">404</span>
+      </h1>
+
+      <p class="cover-subtitle">Libro de los Nombres que No Tienen Dueño</p>
+
+      <div class="cover-divider" aria-hidden="true">
+        <span>— ✦ —</span>
+      </div>
+
+      <p class="cover-epigraph">
+        <em>«Lo que no puede nombrarse tampoco puede contenerse.<br>
+        Este volumen es la prueba de ambas afirmaciones.»</em><br>
+        <small>— Nota del copista. Página extraída. Fecha desconocida.</small>
+      </p>
+
+      <button class="btn-open" id="btn-open-grimoire">
+        Abrir el grimorio
+      </button>
+
+      <p class="cover-legal">
+        Todo el contenido es enteramente ficticio. Ningún rito, entidad o nombre descrito en este volumen tiene correlato en el mundo conocido.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ ÍNDICE ══════════════════════════════ -->
+  <section id="page-index-page" class="page" aria-label="Índice de capítulos">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Navigatio Prohibita</p>
+        <h2>Índice del Grimorio</h2>
+        <p class="section-lead">Ocho secciones recuperadas. El resto se perdió en circunstancias que este archivo no está autorizado a describir.</p>
+      </header>
+
+      <div class="chapter-grid" role="list">
+        <!-- Los capítulos se insertan por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ LECTOR DE CAPÍTULO ══════════════════ -->
+  <section id="page-chapter" class="page" aria-label="Lector de capítulo">
+    <div class="page-inner chapter-layout">
+      <aside class="chapter-sidebar">
+        <nav aria-label="Capítulos">
+          <p class="sidebar-label">Capítulos</p>
+          <ul class="sidebar-list" id="chapter-nav-list" role="list"></ul>
+        </nav>
+        <div class="sidebar-favorites" id="sidebar-favs">
+          <p class="sidebar-label">Favoritos</p>
+          <ul class="favs-list" id="favs-list" role="list">
+            <li class="favs-empty" id="favs-empty">Sin favoritos aún.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <article class="chapter-content" id="chapter-content">
+        <!-- Contenido dinámico -->
+      </article>
+
+      <div class="chapter-toolbar" id="chapter-toolbar">
+        <button class="tool-btn" id="btn-fav" title="Añadir a favoritos" aria-label="Favorito">☆</button>
+        <button class="tool-btn" id="btn-copy" title="Copiar fragmento" aria-label="Copiar">⎘</button>
+        <button class="tool-btn" id="btn-export" title="Exportar como TXT" aria-label="Exportar">↓</button>
+        <button class="tool-btn" id="btn-prev" title="Capítulo anterior" aria-label="Anterior">←</button>
+        <button class="tool-btn" id="btn-next" title="Capítulo siguiente" aria-label="Siguiente">→</button>
+      </div>
+    </div>
+
+    <!-- Notas marginales -->
+    <div class="marginal-note" id="marginal-note" hidden aria-live="polite">
+      <button class="marginal-close" aria-label="Cerrar nota">✕</button>
+      <p class="marginal-text" id="marginal-text"></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ GLOSARIO ══════════════════════════════ -->
+  <section id="page-glossary" class="page" aria-label="Glosario del grimorio">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Lexicon Abyssalis</p>
+        <h2>Glosario de los Términos</h2>
+        <p class="section-lead">Entidades, lugares, símbolos y ritos. Algunas entradas han sido redactadas. Otras se redactaron solas.</p>
+      </header>
+
+      <!-- Búsqueda -->
+      <div class="search-bar">
+        <label for="glossary-search" class="sr-only">Buscar en el glosario</label>
+        <input type="search" id="glossary-search" placeholder="Buscar término…" autocomplete="off">
+        <div class="search-filters" role="group" aria-label="Filtrar por categoría">
+          <button class="filter-btn active" data-filter="all">Todo</button>
+          <button class="filter-btn" data-filter="entity">Entidades</button>
+          <button class="filter-btn" data-filter="place">Lugares</button>
+          <button class="filter-btn" data-filter="symbol">Símbolos</button>
+          <button class="filter-btn" data-filter="rite">Ritos</button>
+        </div>
+      </div>
+
+      <div class="glossary-grid" id="glossary-grid" role="list">
+        <!-- Insertado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ GENERADORES ══════════════════════════ -->
+  <section id="page-generators" class="page" aria-label="Generadores del grimorio">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Apparatus Generativus</p>
+        <h2>Generadores Apócrifos</h2>
+        <p class="section-lead">Herramientas de los copistas. Use con discernimiento. El grimorio no se responsabiliza de los resultados.</p>
+      </header>
+
+      <div class="generators-grid">
+        <!-- Generador de nombres -->
+        <div class="generator-card" id="gen-names">
+          <h3>Generador de Nombres Prohibidos</h3>
+          <p>Extrae combinaciones fonéticas de los registros de la Lengua Hundida.</p>
+          <div class="generator-output" id="name-output" aria-live="polite">
+            <span class="output-placeholder">— pulsa para invocar —</span>
+          </div>
+          <div class="generator-controls">
+            <button class="btn-generate" data-gen="name">Invocar nombre</button>
+            <button class="btn-copy-gen" data-target="name-output" title="Copiar">⎘</button>
+          </div>
+        </div>
+
+        <!-- Generador de fragmentos -->
+        <div class="generator-card" id="gen-fragments">
+          <h3>Generador de Fragmentos Apócrifos</h3>
+          <p>Reconstruye pasajes del Copista Ciego a partir de la gramática del vacío.</p>
+          <div class="generator-output" id="fragment-output" aria-live="polite">
+            <span class="output-placeholder">— pulsa para revelar —</span>
+          </div>
+          <div class="generator-controls">
+            <button class="btn-generate" data-gen="fragment">Revelar fragmento</button>
+            <button class="btn-copy-gen" data-target="fragment-output" title="Copiar">⎘</button>
+            <button class="btn-export-gen" data-target="fragment-output" title="Exportar TXT">↓</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ BESTIARIO ══════════════════════════════ -->
+  <section id="page-bestiary" class="page" aria-label="Bestiario cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Bestiarium Cosmicum</p>
+        <h2>Bestiario del Vacío Cercano</h2>
+        <p class="section-lead">Formas documentadas entre los umbrales. La taxonomía es provisional. Las criaturas no han sido consultadas.</p>
+      </header>
+      <div class="bestiary-grid" id="bestiary-grid" role="list">
+        <!-- Insertado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ ARCHIVO ══════════════════════════════ -->
+  <section id="page-archive" class="page" aria-label="Archivo encontrado">
+    <div class="page-inner">
+      <header class="section-header archive-header">
+        <p class="section-eyebrow glitch-text" data-text="ARCHIVO RECUPERADO">ARCHIVO RECUPERADO</p>
+        <h2>Modo Archivo Encontrado</h2>
+        <p class="section-lead archive-subtitle">
+          Documentos recuperados del sistema <code>HERMES_NULL</code>. Estado: corrompido. Origen: desconocido.<br>
+          <span class="archive-stamp">CLASIFICACIÓN: NIVEL ÓMICRON · ACCESO NO AUTORIZADO</span>
+        </p>
+      </header>
+
+      <!-- Búsqueda global -->
+      <div class="search-bar">
+        <label for="archive-search" class="sr-only">Buscar en el archivo</label>
+        <input type="search" id="archive-search" placeholder="Buscar en todo el grimorio…" autocomplete="off">
+      </div>
+
+      <div class="archive-results" id="archive-results" aria-live="polite">
+        <div class="archive-idle">
+          <p>Introduce un término para buscar en todos los registros del grimorio.</p>
+          <p class="archive-idle-sub">El sistema escanea en tiempo real. Los resultados pueden ser perturbadores.</p>
+        </div>
+      </div>
+
+      <!-- Documentos clasificados -->
+      <div class="archive-docs" id="archive-docs">
+        <h3 class="archive-section-title">Registros Clasificados</h3>
+        <div class="archive-files" id="archive-files-grid">
+          <!-- Insertado por JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ BIBLIOTECA ══════════════════════════════ -->
+  <section id="page-library" class="page" aria-label="Biblioteca de referencia">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Bibliotheca Obscura</p>
+        <h2>Biblioteca de Referencia</h2>
+        <p class="section-lead">Conceptos fundamentales del horror cósmico, textos en dominio público y fragmentos de referencia. Todo el contenido histórico es real y verificable.</p>
+      </header>
+      <div class="library-tabs" role="tablist" aria-label="Secciones de la biblioteca">
+        <button class="lib-tab active" data-tab="concepts" role="tab" aria-selected="true">Conceptos</button>
+        <button class="lib-tab" data-tab="passages" role="tab" aria-selected="false">Textos reales</button>
+      </div>
+      <div class="library-panel" id="lib-concepts">
+        <!-- Insertado por JS -->
+      </div>
+      <div class="library-panel" id="lib-passages" hidden>
+        <!-- Insertado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ AUTORES ══════════════════════════════ -->
+  <section id="page-authors" class="page" aria-label="Autores del horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Auctores Prohibiti</p>
+        <h2>Maestros del Horror Cósmico</h2>
+        <p class="section-lead">Escritores cuya obra configuró el género. Las obras marcadas como dominio público pueden leerse, copiarse y distribuirse libremente en la mayoría de países.</p>
+      </header>
+      <div class="authors-grid" id="authors-grid" role="list">
+        <!-- Insertado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CRONOLOGÍA ══════════════════════════════ -->
+  <section id="page-timeline" class="page" aria-label="Cronología del horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Chronologia Abyssalis</p>
+        <h2>Cronología del Género</h2>
+        <p class="section-lead">De la primera novela gótica al weird fiction contemporáneo. 260 años de terror que escala desde el castillo embrujado hasta el universo indiferente.</p>
+      </header>
+      <div class="timeline-container" id="timeline-container" role="list">
+        <!-- Insertado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ OVERLAY / MODAL ══════════════════════ -->
+  <div id="modal-overlay" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+      <p class="modal-eyebrow" id="modal-eyebrow"></p>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast" aria-live="assertive" role="alert" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
