@@ -37,6 +37,9 @@
         <li><button data-goto="library" class="nav-btn">Biblioteca</button></li>
         <li><button data-goto="authors" class="nav-btn">Autores</button></li>
         <li><button data-goto="timeline" class="nav-btn">Cronología</button></li>
+        <li><button data-goto="adaptations" class="nav-btn">Adaptaciones</button></li>
+        <li><button data-goto="trivia" class="nav-btn">Trivia</button></li>
+        <li><button data-goto="rpg" class="nav-btn">Rol</button></li>
         <li><button data-goto="generators" class="nav-btn">Generadores</button></li>
         <li><button data-goto="archive" class="nav-btn">Archivo</button></li>
         <li><button data-goto="bestiary" class="nav-btn">Bestiario</button></li>
@@ -57,6 +60,9 @@
       <button data-goto="library" class="nav-btn">Biblioteca</button>
       <button data-goto="authors" class="nav-btn">Autores</button>
       <button data-goto="timeline" class="nav-btn">Cronología</button>
+      <button data-goto="adaptations" class="nav-btn">Adaptaciones</button>
+      <button data-goto="trivia" class="nav-btn">Trivia</button>
+      <button data-goto="rpg" class="nav-btn">Rol</button>
       <button data-goto="generators" class="nav-btn">Generadores</button>
       <button data-goto="archive" class="nav-btn">Archivo</button>
       <button data-goto="bestiary" class="nav-btn">Bestiario</button>
@@ -194,6 +200,8 @@
           <button class="filter-btn" data-filter="place">Lugares</button>
           <button class="filter-btn" data-filter="symbol">Símbolos</button>
           <button class="filter-btn" data-filter="rite">Ritos</button>
+          <button class="filter-btn" data-filter="mythos">Mito (DP)</button>
+          <button class="filter-btn filter-random" id="btn-random-entry" aria-label="Entrada aleatoria">⚄ Aleatoria</button>
         </div>
       </div>
 
@@ -338,6 +346,45 @@
       <div class="timeline-container" id="timeline-container" role="list">
         <!-- Insertado por JS -->
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ ADAPTACIONES ══════════════════════ -->
+  <section id="page-adaptations" class="page" aria-label="Adaptaciones del horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Cinema · TV · Ludum · Musica</p>
+        <h2>Adaptaciones y Obras Inspiradas</h2>
+        <p class="section-lead">Cine, televisión, videojuegos y música que han llevado el horror cósmico más allá del texto.</p>
+      </header>
+      <div id="adaptations-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ TRIVIA ══════════════════════════════ -->
+  <section id="page-trivia" class="page" aria-label="Trivia del horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Examen del Archivista</p>
+        <h2>Trivia del Horror Cósmico</h2>
+        <p class="section-lead">10 preguntas aleatorias sobre el género, sus autores, sus criaturas y sus textos. El grimorio evalúa tu conocimiento.</p>
+      </header>
+      <div id="trivia-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ ROL ══════════════════════════════════ -->
+  <section id="page-rpg" class="page" aria-label="Escenarios de rol de horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Apparatus Ludicus</p>
+        <h2>Escenarios de Rol</h2>
+        <p class="section-lead">Premisas para partidas de horror cósmico. Compatibles con Call of Cthulhu, Delta Green, Gumshoe o cualquier sistema narrativo.</p>
+      </header>
+      <div class="rpg-header-actions">
+        <button class="btn-generate" id="rpg-random-btn">⚄ Escenario aleatorio</button>
+      </div>
+      <div id="rpg-container" class="rpg-grid"></div>
     </div>
   </section>
 

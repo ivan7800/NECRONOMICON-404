@@ -196,6 +196,7 @@ const CHAPTERS = [
 ];
 
 const GLOSSARY_ENTRIES = [
+  // ── Entidades ficticias originales ──────────────────────────────
   {
     id: 'g1', type: 'entity', name: 'Orsún el Inmóvil',
     short: 'Entidad geométrica de forma indeterminada. El espacio se desplaza a su alrededor.',
@@ -214,6 +215,7 @@ const GLOSSARY_ENTRIES = [
     full: 'Documentado únicamente en terrenos que estuvieron bajo el mar. No se presenta: se recuerda. El recuerdo precede al encuentro y es más perturbador que el encuentro mismo. Quienes han completado la secuencia memoria-encuentro describen la experiencia como "recordar algo que todavía no ha pasado pero que ya terminó". La Orden considera esta inversión temporal su característica definitoria.',
     tags: ['mar', 'memoria', 'tiempo invertido']
   },
+  // ── Lugares ficticios originales ─────────────────────────────────
   {
     id: 'g4', type: 'place', name: 'La Biblioteca del Siglo Incorrecto',
     short: 'Aparece en edificios que el visitante acaba de abandonar. Contiene libros no escritos con anotaciones de lectores previos.',
@@ -232,6 +234,7 @@ const GLOSSARY_ENTRIES = [
     full: 'Imposible de cartografiar porque quienes lo describen siempre lo hacen desde el interior. El único indicador externo es una anomalía meteorológica: un viento con olor específico, descrito de manera independiente por doce testigos como "el olor de algo que no ha pasado todavía pero que ya ha terminado". La gramática de esta descripción ha ocupado a la Orden durante tres generaciones.',
     tags: ['umbral', 'clima', 'olfato']
   },
+  // ── Símbolos ficticios originales ────────────────────────────────
   {
     id: 'g7', type: 'symbol', name: 'El Sigilo de la Convergencia',
     short: 'Aparece en diecinueve culturas sin contacto entre sí. Siempre en superficies que han estado en agua salada.',
@@ -244,6 +247,7 @@ const GLOSSARY_ENTRIES = [
     full: 'No es un símbolo: es una ausencia de símbolo de forma consistente. Aparece como zona en superficies escritas donde ningún medio de escritura permanece. Los análisis de superficie no muestran diferencias químicas entre las zonas marcadas y las adyacentes. La tinta sencillamente prefiere no estar ahí. La forma de la ausencia es siempre idéntica independientemente del soporte o la cultura.',
     tags: ['símbolo', 'ausencia', 'tinta']
   },
+  // ── Ritos ficticios originales ───────────────────────────────────
   {
     id: 'g9', type: 'rite', name: 'El Rito del Umbral Doméstico',
     short: 'Protocolo de escucha de cuatro pasos. El cuarto paso es diferente para cada practicante.',
@@ -259,7 +263,7 @@ const GLOSSARY_ENTRIES = [
   {
     id: 'g11', type: 'entity', name: 'El Copista Ciego',
     short: 'Escriba de ceguera selectiva. Tomaba dictado sin fuente audible. Negó la autoría de parte de su propia obra.',
-    full: 'No padecía ceguera clínica sino selectiva: veía todo excepto lo directamente frente a él. Esto le permitía copiar sin leer y tomar dictado sin fuente audible. Su obra se divide en fragmentos que él fechó y fragmentos que negó haber escrito, aunque todos están en su caligrafía. Los análisis grafológicos sobre los fragmentos negados produjeron informes contradictorios. Dos peritos solicitaron ser relevados sin explicación. Un tercero desapareció.',
+    full: 'No padecía ceguera clínica sino selectiva: veía todo excepto lo directamente frente a él. Esto le permitía copiar sin leer y tomar dictado sin fuente audible. Su obra se divide en fragmentos que él fechó y fragmentos que negó haber escrito, aunque todos están en su caligrafía. Los análisis grafológicos sobre los fragmentados negados produjeron informes contradictorios. Dos peritos solicitaron ser relevados sin explicación. Un tercero desapareció.',
     tags: ['Copista', 'escritura', 'autoría']
   },
   {
@@ -267,54 +271,216 @@ const GLOSSARY_ENTRIES = [
     short: 'Institución archivística de origen indeterminado. Custodios del Necronomicon 404.',
     full: 'Institución de origen y número de miembros desconocidos. Su propósito declarado es el archivo y preservación de documentos que otras instituciones consideran inarchivables. No tienen sede fija: los investigadores que han intentado localizarlos describen el proceso como "encontrar a alguien que ya sabía que los estabas buscando". Su relación con el Necronomicon 404 no es de autoría: se describen a sí mismos como custodios de un texto que se escribió solo.',
     tags: ['institución', 'archivo', 'custodia']
+  },
+  // ── Entidades del Mito (dominio público, ficticias de Lovecraft) ──
+  {
+    id: 'g13', type: 'mythos', name: 'Cthulhu',
+    short: 'Gran Antiguo que yace muerto y soñando en R\'lyeh. Su influencia mental alcanza a quienes tienen disposición receptiva.',
+    full: 'Creado por H.P. Lovecraft, primera aparición en La llamada de Cthulhu (1928, dominio público). Gran Antiguo que duerme en la ciudad sumergida de R\'lyeh en el Pacífico Sur. No está muerto sino en un estado intermedio: "No está muerto lo que puede yacer eternamente, y con el paso de los eones extraños hasta la muerte puede morir." Alcanza a ciertos soñadores mediante ondas psíquicas. Su culto existe en todas las culturas marítimas bajo distintos nombres.',
+    tags: ['Mito de Cthulhu', 'Grandes Antiguos', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g14', type: 'mythos', name: 'Azathoth',
+    short: 'El Caos ciego e idiota en el centro del universo. El dios más alto y el más vacío.',
+    full: 'Creado por H.P. Lovecraft (dominio público). El "Caos nuclear" o "Caos ciego e idiota" que ocupa el centro del universo último, rodeado por los Dioses Exteriores que danzan a los sonidos de una flauta. Azathoth no tiene conciencia, voluntad ni propósito. Su existencia es la prueba del cosmicismo lovecraftiano llevado al extremo: el principio de todo es un idiota ciego. Aparece en varios textos del Mito como la entidad más poderosa pero absolutamente inerte.',
+    tags: ['Mito de Cthulhu', 'Dioses Exteriores', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g15', type: 'mythos', name: 'Nyarlathotep',
+    short: 'El Mensajero Reptante. El único Gran Antiguo con personalidad, voluntad y gusto por la interacción humana.',
+    full: 'Creado por H.P. Lovecraft (dominio público). A diferencia de la mayoría de entidades del Mito, Nyarlathotep actúa deliberadamente y parece disfrutar del contacto con los humanos, lo que lo hace más aterrador que los seres indiferentes. Tiene mil formas: el hombre oscuro, el faraón negro, el hombre de negro. Es el alma y mensajero de los Dioses Exteriores. Lovecraft lo describió en un poema en prosa de 1920 (dominio público) como un hombre alto y siniestro que recorría el mundo mostrando maravillas que terminaban en locura.',
+    tags: ['Mito de Cthulhu', 'Dioses Exteriores', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g16', type: 'mythos', name: 'Yog-Sothoth',
+    short: 'La Clave y la Puerta. Omnisciente, coexiste con todo el tiempo y el espacio a la vez.',
+    full: 'Creado por H.P. Lovecraft (dominio público). Yog-Sothoth lo sabe todo y lo ve todo: coexiste con todos los momentos del tiempo y todos los puntos del espacio simultáneamente. Es "la Llave y la Puerta": a través de él puede accederse a cualquier lugar y tiempo. A pesar de su omnisciencia, puede ser convocado mediante los ritos correctos —lo que en el Mito constituye una de las mayores contradicciones: ¿por qué algo omnisciente necesita ser convocado?',
+    tags: ['Mito de Cthulhu', 'Dioses Exteriores', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g17', type: 'mythos', name: 'Shub-Niggurath',
+    short: 'La Cabra Negra de los Bosques con su Millar de Retoños. Fertilidad como horror.',
+    full: 'Creado por H.P. Lovecraft (dominio público). Entidad de fertilidad cósmica cuya adoración invierte el concepto: la fecundidad no como vida sino como proliferación imparable de lo aberrante. Sus Retoños son los Dark Young, seres de masa negra y tentáculos que habitan en bosques donde se celebran sus ritos. El nombre completo —"Shub-Niggurath, la Cabra Negra de los Bosques con su Millar de Retoños"— aparece frecuentemente en conjuros y rituales del Mito.',
+    tags: ['Mito de Cthulhu', 'Grandes Antiguos', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g18', type: 'mythos', name: 'R\'lyeh',
+    short: 'Ciudad sumergida en el Pacífico Sur donde Cthulhu aguarda. Geometría no euclidiana que desequilibra la percepción.',
+    full: 'Creada por H.P. Lovecraft en La llamada de Cthulhu (1928, dominio público). Ciudad de arquitectura imposible construida según geometría no euclidiana: los ángulos son incorrectos, las perspectivas contradicen el espacio tridimensional. Cuando emerge brevemente del océano, quienes la visitan pierden la orientación espacial y la cordura. Las coordenadas que Lovecraft le asignó (47°9\'S, 126°43\'W) están en el océano Pacífico Sur. R\'lyeh es el topónimo más reconocible del Mito.',
+    tags: ['Mito de Cthulhu', 'lugares', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g19', type: 'mythos', name: 'El Necronomicon (ficticio)',
+    short: 'Grimorio árabe ficticio inventado por Lovecraft. No existe ningún original real anterior a 1927.',
+    full: 'Creado por H.P. Lovecraft. La historia del Necronomicon (1927, dominio público) establece que fue escrito hacia el año 730 d.C. por Abdul Alhazred, "el árabe demente" de Saná. El título árabe original es Al Azif, el sonido que producen los insectos nocturnos. Lovecraft construyó una historia editorial completa: traducción griega, edición latina del siglo XVI, ejemplares en la Biblioteca Miskatonic. No existe ningún Necronomicon real de origen pre-lovecraftiano. Todas las ediciones "reales" son obras modernas basadas en el texto ficticio.',
+    tags: ['Mito de Cthulhu', 'textos prohibidos', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g20', type: 'mythos', name: 'Arkham',
+    short: 'Ciudad ficticia de Massachusetts. Sede de la Universidad Miskatonic y epicentro del horror lovecraftiano en Nueva Inglaterra.',
+    full: 'Creada por H.P. Lovecraft (dominio público). Ciudad ficticia basada vagamente en Salem, Massachusetts. Alberga la Universidad Miskatonic, cuya biblioteca conserva uno de los cuatro ejemplares del Necronomicon conocidos. Arkham es la base de operaciones de numerosos protagonistas lovecraftianos. El nombre fue adoptado por DC Comics para el manicomio Arkham Asylum de Batman (1974), y por la editorial Arkham House (1939) fundada para preservar la obra de Lovecraft.',
+    tags: ['Mito de Cthulhu', 'lugares', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g21', type: 'mythos', name: 'Innsmouth',
+    short: 'Puerto decadente de Massachusetts con una población que oculta sangre marina. Origen del culto a Dagon.',
+    full: 'Creado por H.P. Lovecraft en La sombra sobre Innsmouth (1936, dominio público). Puerto pesquero en declive cuya población presenta rasgos físicos progresivamente no humanos: los ojos sin párpados, la piel escamosa, el cuello que desaparece. Los habitantes descienden de uniones entre humanos y los Deep Ones, los Profundos, seres marinos que viven en la ciudad sumergida de Y\'ha-nthlei frente a la costa. El "aspecto de Innsmouth" es el término para la degeneración física visible.',
+    tags: ['Mito de Cthulhu', 'lugares', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g22', type: 'mythos', name: 'El Rey de Amarillo',
+    short: 'Obra de teatro ficticia de dos actos. Quien lee el segundo acto no puede olvidarlo ni recuperarse de ello.',
+    full: 'Creado por Robert W. Chambers en El Rey de Amarillo (1895, dominio público). Obra de teatro ficticia de contenido desconocido cuya lectura produce efectos psíquicos permanentes. El primer acto es convencional; el segundo es el vector del daño. Chambers nunca describe el contenido de la obra, solo sus efectos. El Rey de Amarillo es también la entidad que aparece en Carcosa, descrita vagamente como un ser con harapos amarillos y una máscara que puede no ser una máscara. True Detective (2014) popularizó la referencia masivamente.',
+    tags: ['Rey de Amarillo', 'Chambers', 'Carcosa', 'dominio público']
+  },
+  {
+    id: 'g23', type: 'mythos', name: 'Carcosa',
+    short: 'Ciudad imposible entre Aldebarán y las Híades. Creada por Bierce, codificada por Chambers, popularizada por True Detective.',
+    full: 'Topónimo creado por Ambrose Bierce en Un habitante de Carcosa (1886, dominio público). Robert W. Chambers lo adoptó en El Rey de Amarillo (1895) convirtiéndolo en ciudad de Aldebarán, bajo las estrellas de las Híades. En la obra de Chambers, Carcosa es el lugar donde gobierna el Rey de Amarillo y donde se encuentra el Lago de Hali. True Detective (temporada 1, 2014) convirtió Carcosa en un lugar real dentro de su ficción, llevando el nombre al conocimiento masivo. No existe ninguna ciudad real con ese nombre.',
+    tags: ['Bierce', 'Chambers', 'Rey de Amarillo', 'dominio público']
+  },
+  {
+    id: 'g24', type: 'symbol', name: 'El Signo Amarillo',
+    short: 'Símbolo ficticio de Chambers. Quien lo ve queda vinculado al Rey de Amarillo. Forma nunca descrita explícitamente.',
+    full: 'Creado por Robert W. Chambers en El Rey de Amarillo (1895, dominio público). El Signo Amarillo es un símbolo cuya descripción exacta Chambers nunca proporciona: solo sus efectos. Quien lo reconoce queda conectado al Rey de Amarillo y tarde o temprano experimenta su influencia. Ha generado multitud de interpretaciones gráficas en la cultura popular del horror. En el sistema del Mito lovecraftiano posterior fue adoptado como símbolo de Hastur, otra entidad del Mito.',
+    tags: ['Chambers', 'Rey de Amarillo', 'símbolo', 'dominio público']
+  },
+  {
+    id: 'g25', type: 'entity', name: 'Los Deep Ones (Los Profundos)',
+    short: 'Seres marinos humanoides que viven en ciudades submarinas. Se cruzan con humanos produciendo descendencia con doble naturaleza.',
+    full: 'Creados por H.P. Lovecraft en La sombra sobre Innsmouth (1936, dominio público). Los Deep Ones son inmortales a menos que sean destruidos violentamente. Viven en la ciudad de Y\'ha-nthlei bajo el Atlántico Norte y en Rlyeh. Adoran a Dagon y a Madre Hidra, antiguas deidades de los Profundos. Su característica más perturbadora es la reproducción con humanos: la descendencia tiene un período de vida humana aparentemente normal, después del cual experimenta la Transformación y desciende al mar para vivir eternamente entre los suyos.',
+    tags: ['Mito de Cthulhu', 'criaturas', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g26', type: 'entity', name: 'El Shoggoth',
+    short: 'Masa protoplasmática creada por los Antiguos como herramienta. Se rebeló. La memoria de haberlos creado aterra incluso a sus creadores.',
+    full: 'Creado por H.P. Lovecraft en En las montañas de la locura (1931, dominio público). Los Shoggoths son masas de protoplasma negro de varios metros que pueden adoptar cualquier forma. Fueron creados por los Primigenios como esclavos hace cientos de millones de años. Su rebeldía obligó a los Primigenios a reducirlos a un estado de semi-consciencia. En estado natural son amorales, hambri-entos y capaces de reproducir cualquier sonido, incluyendo el lenguaje humano. Sus vocalizaciones —"Tekeli-li"— son lo último que escuchan muchos exploradores.',
+    tags: ['Mito de Cthulhu', 'criaturas', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g27', type: 'place', name: 'La Universidad Miskatonic',
+    short: 'Universidad ficticia de Arkham. Su biblioteca conserva el Necronomicon y es punto de partida de múltiples expediciones fatales.',
+    full: 'Creada por H.P. Lovecraft (dominio público). La Miskatonic University de Arkham, Massachusetts, tiene una biblioteca que custodia textos prohibidos incluyendo uno de los cuatro ejemplares conocidos del Necronomicon, los Manuscritos Pnakóticos y el Libro de Eibon. Sus departamentos de geología, biología marina y física han organizado expediciones que terminaron catastrófi-camente (la Expedición Miskatonic a la Antártida, 1930-31). Ha aparecido en decenas de obras del Mito y en cultura popular. Representa la institución académica como vector de descubrimientos que no deberían hacerse.',
+    tags: ['Mito de Cthulhu', 'lugares', 'Arkham', 'dominio público']
+  },
+  {
+    id: 'g28', type: 'entity', name: 'Los Mi-Go (Los Hongos de Yuggoth)',
+    short: 'Entidades crustáceas de otro mundo capaces de extraer cerebros y preservarlos en cilindros metálicos.',
+    full: 'Creados por H.P. Lovecraft en El susurrador en la oscuridad (1931, dominio público). Los Mi-Go son seres de un planeta exterior (Yuggoth, identificable con Plutón) que llevan millones de años visitando la Tierra para extraer minerales. Son capaces de extraer cerebros humanos con vida y preservarlos en cilindros metálicos conectables a dispositivos de visión y comunicación. Los cerebros preservados son conscientes pero incapaces de dormir, lo que en perspectiva indefinida constituye una forma de horror peculiar.',
+    tags: ['Mito de Cthulhu', 'criaturas', 'dominio público', 'Lovecraft']
+  },
+  {
+    id: 'g29', type: 'rite', name: 'La Invocación del Faro Interior',
+    short: 'Rito de la Orden para localizar umbrales activos. Requiere oscuridad completa y un objeto que haya cambiado de dueño tres veces por muerte.',
+    full: 'Protocolo de diagnóstico espacial de la Orden Sumergida. El practicante debe encontrarse en oscuridad completa sosteniendo un objeto que haya pasado de mano en mano al menos tres veces por causa de muerte de su poseedor. El objeto actúa como receptor. Si hay un umbral activo en el radio de cincuenta metros, el objeto cambia de temperatura: frío para umbrales inactivos, caliente para umbrales con tráfico reciente. La Orden advierte que el cambio de temperatura no siempre es detectable por el practicante mismo; a veces solo lo notan quienes están fuera de la habitación.',
+    tags: ['Orden Sumergida', 'rito', 'diagnóstico', 'umbral']
+  },
+  {
+    id: 'g30', type: 'symbol', name: 'El Sigilo del Tercer Párpado',
+    short: 'Símbolo que aparece grabado en el interior de los párpados de quienes han visto a Los Profundos despiertos.',
+    full: 'Documentado por la Orden Sumergida en trece casos. El Sigilo del Tercer Párpado no puede verse en un espejo porque aparece en la cara interior del párpado: solo puede ser fotografiado con los ojos entreabiertos bajo iluminación específica, o descrito por el propio portador que lo percibe como una imagen persistente al cerrar los ojos. Ninguno de los trece portadores documentados ha podido explicar cuándo apareció. Todos describieron haberlo notado después de un período de sueños especialmente vividos ambientados en entornos marinos.',
+    tags: ['símbolo', 'Deep Ones', 'párpado', 'Orden Sumergida']
   }
 ];
 
 const BESTIARY = [
+  // ── Criaturas ficticias originales ───────────────────────────────
   {
-    id: 'b1',
-    class: 'Clase I — Umbral',
+    id: 'b1', class: 'Clase I — Umbral',
     name: 'El Visitante de las Fechas Incorrectas',
     aka: 'También: El Anacronismo, La Visita',
-    desc: 'Se presenta en entornos domésticos durante fechas que el calendario señala como incorrectas: el día que no existe en años no bisiestos, el último día de un mes que tiene un día menos de lo habitual. Su aspecto es el de una persona completamente normal excepto por el detalle que cada testigo recuerda de manera diferente: la ropa del color equivocado, los zapatos en los pies equivocados, la sombra proyectada en la dirección incorrecta para la fuente de luz. No habla. Espera. Cuando se le pregunta qué espera, los testigos que le han preguntado no han podido recordar la respuesta.',
+    desc: 'Se presenta en entornos domésticos durante fechas que el calendario señala como incorrectas: el día que no existe en años no bisiestos, el último día de un mes que tiene un día menos de lo habitual. Su aspecto es el de una persona completamente normal excepto por el detalle que cada testigo recuerda de manera diferente: la ropa del color equivocado, los zapatos en los pies equivocados, la sombra proyectada en la dirección incorrecta para la fuente de luz. No habla. Espera.',
     stats: { 'Avistamientos': '34', 'Interacciones': '9', 'Resolución': 'Espontánea', 'Amenaza': 'No determinada' },
     svgPath: 'M100,20 L180,80 L160,170 H40 L20,80 Z'
   },
   {
-    id: 'b2',
-    class: 'Clase II — Archivístico',
+    id: 'b2', class: 'Clase II — Archivístico',
     name: 'Los Coleccionistas de Instantes',
     aka: 'También: Las Manos Vacías, Los que Guardan',
-    desc: 'Se desplazan en grupos de número impar, siempre en espacios donde se ha producido recientemente una pérdida de información: archivos incendiados, discos duros borrados, conversaciones no grabadas. No son destructivos: son, según la Orden, conservacionistas de lo que no puede conservarse. Toman algo de cada lugar que visitan. Los testigos no saben qué han perdido hasta días o semanas después, cuando intentan recordar algo específico del período del encuentro y descubren que el recuerdo no está.',
+    desc: 'Se desplazan en grupos de número impar en espacios donde se ha producido pérdida de información: archivos incendiados, discos borrados, conversaciones no grabadas. No son destructivos: son conservacionistas de lo que no puede conservarse. Toman algo de cada lugar que visitan. Los testigos no saben qué han perdido hasta semanas después, cuando intentan recordar algo del período del encuentro.',
     stats: { 'Avistamientos': '67', 'Tamaño de grupo': 'Impar siempre', 'Sustracción': 'Memorias', 'Amenaza': 'Archivística' },
     svgPath: 'M100,10 L130,90 L200,90 L145,145 L165,190 L100,155 L35,190 L55,145 L0,90 L70,90 Z'
   },
   {
-    id: 'b3',
-    class: 'Clase III — Geométrico',
+    id: 'b3', class: 'Clase III — Geométrico',
     name: 'El Ángulo que No Debería Estar',
     aka: 'También: La Esquina Extra, El Noventa y Uno',
-    desc: 'No es una criatura en sentido biológico sino una anomalía geométrica con comportamiento aparentemente volitivo. Se manifiesta como un ángulo de noventa y un grados en una esquina donde el ángulo debería ser de noventa. La diferencia de un grado no es perceptible a simple vista pero produce en los observadores sensibles una sensación descrita como "la arquitectura recordando algo que la física prohíbe". La anomalía se desplaza por las esquinas de los edificios afectados siguiendo patrones que no corresponden a ninguna progresión matemática conocida.',
+    desc: 'No es una criatura biológica sino una anomalía geométrica con comportamiento volitivo. Se manifiesta como un ángulo de noventa y un grados donde debería haber noventa. La diferencia de un grado produce en los observadores sensibles la sensación de "la arquitectura recordando algo que la física prohíbe". Se desplaza por las esquinas de los edificios afectados siguiendo patrones sin progresión matemática conocida.',
     stats: { 'Ángulo': '91°', 'Mobilidad': 'Sí', 'Percepción': 'Sensibles únicamente', 'Amenaza': 'Arquitectónica' },
     svgPath: 'M10,10 L190,10 L190,190 L10,190 Z M50,50 L150,50 L150,150 L50,150 Z'
   },
   {
-    id: 'b4',
-    class: 'Clase IV — Fonético',
+    id: 'b4', class: 'Clase IV — Fonético',
     name: 'El Eco Previo',
     aka: 'También: La Respuesta Adelantada, El Antisilencio',
-    desc: 'Fenómeno auditivo con características que sugieren agencia. Se presenta como el eco de una palabra que el hablante aún no ha pronunciado. El eco es audible para otros en el espacio pero no para el hablante mismo. El tiempo de anticipación varía entre uno y cuatro segundos. Las palabras que anticipa nunca son las más esperables en el contexto de la conversación. Los lingüistas de la Orden han documentado que las palabras anticipadas, ordenadas cronológicamente, forman frases coherentes en la Lengua del Segundo Estrato.',
+    desc: 'Fenómeno auditivo con características que sugieren agencia. Se presenta como el eco de una palabra que el hablante aún no ha pronunciado. El eco es audible para otros en el espacio pero no para el hablante. Las palabras anticipadas, ordenadas cronológicamente, forman frases coherentes en la Lengua del Segundo Estrato.',
     stats: { 'Anticipación': '1-4 seg.', 'Perceptible por': 'Terceros', 'Idioma': 'Segundo Estrato', 'Amenaza': 'Semántica' },
     svgPath: 'M100,100 m-80,0 a80,80 0 1,0 160,0 a80,80 0 1,0 -160,0 M100,100 m-40,0 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0'
   },
   {
-    id: 'b5',
-    class: 'Clase V — Epistémico',
+    id: 'b5', class: 'Clase V — Epistémico',
     name: 'La Pregunta sin Formulador',
     aka: 'También: La Duda Autónoma, Lo que Quiere Saber',
-    desc: 'Clasificada como criatura epistémica: entidad cuya existencia se manifiesta exclusivamente como impulso cognitivo en los observadores. Quienes la han "visto" describen la experiencia como "la sensación de que algo quiere saber algo de mí, específicamente, y que la pregunta que quiere hacerme es una para la que no tengo respuesta pero que reconozco". El reconocimiento de la pregunta sin poder formularla es la experiencia completa del encuentro. Algunos testigos pasan el resto de su vida intentando recordar cuál era la pregunta.',
+    desc: 'Entidad cuya existencia se manifiesta como impulso cognitivo en los observadores. Quienes la han "visto" describen la sensación de que algo quiere saber algo de ellos específicamente, con una pregunta para la que no tienen respuesta pero reconocen. El reconocimiento de la pregunta sin poder formularla es la experiencia completa del encuentro.',
     stats: { 'Forma': 'No aplica', 'Encuentros': '23 documentados', 'Secuela típica': 'Búsqueda crónica', 'Amenaza': 'Epistemológica' },
     svgPath: 'M100,30 Q140,30 150,60 Q160,90 130,100 Q110,110 110,130 L90,130 Q90,105 110,92 Q135,78 125,62 Q115,46 100,50 Z M90,145 L110,145 L110,165 L90,165 Z'
+  },
+  // ── Criaturas del Mito (dominio público) ─────────────────────────
+  {
+    id: 'b6', class: 'Clase VI — Mito · Primigenio',
+    name: 'El Shoggoth',
+    aka: 'Tek-li. La Masa. El Esclavo Rebelde.',
+    desc: 'Masa de protoplasma negro de varios metros creada por los Primigenios como herramienta hace cientos de millones de años. Puede adoptar cualquier forma y reproducir cualquier sonido, incluyendo el lenguaje humano. Su rebeldía terminó con su reducción a semi-consciencia. En túneles y cavernas reproduce el sonido "Tekeli-li" con variaciones que los supervivientes describen como casi musicales. Creado por H.P. Lovecraft en En las montañas de la locura (1931, dominio público).',
+    stats: { 'Origen': 'Primigenios', 'Tamaño': 'Variable, >5m', 'Inteligencia': 'Semi-consciente', 'Fuente': 'Lovecraft, 1931 (DP)' },
+    svgPath: 'M30,100 Q50,30 100,20 Q150,30 170,100 Q150,170 100,180 Q50,170 30,100 Z M60,100 Q80,60 100,55 Q120,60 140,100 Q120,140 100,145 Q80,140 60,100 Z'
+  },
+  {
+    id: 'b7', class: 'Clase VII — Mito · Profundo',
+    name: 'Los Deep Ones (Los Profundos)',
+    aka: 'Hijos de Dagon. Los del Mar.',
+    desc: 'Humanoides marinos inmortales que habitan en ciudades submarinas y se reproducen con humanos. La descendencia híbrida tiene apariencia humana durante décadas, luego experimenta la Transformación y desciende al mar. Sus rasgos físicos incluyen ojos sin párpados que no parpadean, escamas progresivas en cuello y extremidades, y cuello que adelgaza hasta casi desaparecer. Su grito de guerra —"Iä! Iä!"— precede los asaltos a embarcaciones en noches sin luna. Creados por Lovecraft en La sombra sobre Innsmouth (1936, dominio público).',
+    stats: { 'Mortalidad': 'Condicional', 'Reproducción': 'Interespecífica', 'Ciudad': 'Y\'ha-nthlei', 'Fuente': 'Lovecraft, 1936 (DP)' },
+    svgPath: 'M100,15 L140,50 L160,100 L140,150 L100,185 L60,150 L40,100 L60,50 Z M100,40 L125,70 L135,100 L125,130 L100,160 L75,130 L65,100 L75,70 Z'
+  },
+  {
+    id: 'b8', class: 'Clase VIII — Mito · Exterior',
+    name: 'Los Mi-Go (Hongos de Yuggoth)',
+    aka: 'Los Crustáceos Alados. Los que Guardan Mentes.',
+    desc: 'Seres de origen exterior —el planeta Yuggoth, identificado con Plutón— que visitan la Tierra desde tiempos inmemoriales para extraer minerales. Capaces de practicar cirugía cerebral manteniendo el cerebro vivo en cilindros metálicos conectables a dispositivos de visión y comunicación. Los cerebros así preservados son conscientes indefinidamente, lo que en perspectiva de siglos tiene consecuencias psicológicas que los Mi-Go no consideran relevantes. Creados por Lovecraft en El susurrador en la oscuridad (1931, dominio público).',
+    stats: { 'Origen': 'Yuggoth (Plutón)', 'Tecnología': 'Avanzada', 'Especialidad': 'Neurocirugía', 'Fuente': 'Lovecraft, 1931 (DP)' },
+    svgPath: 'M100,20 L120,60 L160,60 L130,85 L145,125 L100,100 L55,125 L70,85 L40,60 L80,60 Z'
+  },
+  {
+    id: 'b9', class: 'Clase IX — Mito · Exterior',
+    name: 'Los Nightgaunts (Los Espectros Nocturnos)',
+    aka: 'Los sin Rostro. Los Portadores.',
+    desc: 'Seres negros, delgados y sin rostro con alas de murciélago y cola prensil que habitan las regiones profundas de las Tierras del Sueño. No tienen cara en ningún sentido: ni ojos, ni boca, ni narices, solo piel lisa donde debería haber rasgos. Trabajan silenciosamente para Nodens, Señor del Gran Abismo. Su táctica es hacer cosquillas a sus víctimas durante el transporte aéreo para mantenerlas desorientadas. No son maliciosos en sentido humano: son simplemente herramientas con alas. Creados por Lovecraft en el ciclo onírico (dominio público).',
+    stats: { 'Entorno': 'Tierras del Sueño', 'Señor': 'Nodens', 'Táctica': 'Cosquillas + transporte', 'Fuente': 'Lovecraft, ciclo onírico (DP)' },
+    svgPath: 'M100,50 Q60,20 30,60 Q10,100 30,140 L100,180 L170,140 Q190,100 170,60 Q140,20 100,50 Z M100,80 Q80,65 65,85 Q60,100 65,115 L100,150 L135,115 Q140,100 135,85 Q120,65 100,80 Z'
+  },
+  {
+    id: 'b10', class: 'Clase X — Mito · Grande Antiguo',
+    name: 'Hastur el Innombrable',
+    aka: 'El Rey de Amarillo. El que No Debe Ser Nombrado. HIM.',
+    desc: 'Gran Antiguo asociado al viento, al espacio vacío y a Carcosa. Su mera mención es peligrosa: "No nombres a Hastur más de dos veces en voz alta en el mismo lugar." La tercera mención es la invocación. Su relación con el Rey de Amarillo de Chambers es interpretativa: algunos estudiosos del Mito los consideran la misma entidad, otros aspectos distintos. Hastur fue creado por Ambrose Bierce (1891, dominio público) como nombre de una deidad pastoril; Chambers y después August Derleth lo transformaron en horror cósmico.',
+    stats: { 'Origen literario': 'Bierce 1891 / Chambers 1895', 'Regla': 'No más de 2 menciones', 'Domicilio': 'Carcosa / Aldebarán', 'Fuente': 'DP (Bierce/Chambers)' },
+    svgPath: 'M100,10 L190,90 L155,190 L45,190 L10,90 Z M100,40 L165,95 L140,170 L60,170 L35,95 Z'
+  },
+  {
+    id: 'b11', class: 'Clase XI — Original',
+    name: 'El Segundero que se Detiene',
+    aka: 'También: El Instante Sostenido, La Pausa',
+    desc: 'No es una entidad con forma sino una condición temporal localizada: un momento en el tiempo que se niega a concluir. Los testigos lo describen como la experiencia de estar dentro del mismo segundo durante períodos que luego resultan haber durado entre cuatro y doscientas horas según medición externa. Durante el período, los procesos biológicos continúan. Los pensamientos continúan. Solo el tiempo externo se ha detenido. Nadie ha podido describir qué lo causa. La Orden ha documentado que siempre ocurre en lugares donde alguien murió sin terminar una frase.',
+    stats: { 'Duración subjetiva': 'Variable', 'Duración objetiva': '0 segundos', 'Causa': 'Desconocida', 'Amenaza': 'Temporal' },
+    svgPath: 'M100,100 m-85,0 a85,85 0 1,0 170,0 a85,85 0 1,0 -170,0 M100,30 L100,105 L148,130'
+  },
+  {
+    id: 'b12', class: 'Clase XII — Original',
+    name: 'La Sombra que Precede al Objeto',
+    aka: 'También: El Adelanto, La Sombra Anticipada',
+    desc: 'Fenómeno documentado en 41 ocasiones por la Orden: la sombra de un objeto aparece en la pared antes de que el objeto entre en la habitación. El intervalo entre sombra y objeto varía entre tres segundos y veinte minutos. En todos los casos documentados, el objeto que finalmente entró fue portado por alguien que murió en los seis meses siguientes al incidente. La Orden no establece causalidad. Solo documenta la correlación y la posición de sus miembros respecto a la habitación cuando ocurre.',
+    stats: { 'Documentado': '41 casos', 'Intervalo sombra-objeto': '3 seg - 20 min', 'Correlación mortal': '100%', 'Amenaza': 'Predictiva' },
+    svgPath: 'M40,160 L100,40 L160,160 Z M40,160 Q100,120 160,160'
   }
 ];
 
@@ -365,6 +531,382 @@ const ARCHIVE_DOCS = [
     meta: '1 KB · Legible · Sin fecha',
     desc: 'Fragmento cero del Copista Ciego. El único texto en su caligrafía habitual. «No elijo las palabras. Las palabras me eligen a mí.»',
     corrupted: false
+  }
+];
+
+// ── ADAPTACIONES — Cine, TV, videojuegos, música ─────────────────
+const ADAPTATIONS = [
+  // CINE
+  {
+    id: 'ad1', type: 'film',
+    title: 'Re-Animator',
+    year: 1985,
+    director: 'Stuart Gordon',
+    based_on: 'Herbert West-Reanimador (Lovecraft, 1922, dominio público)',
+    desc: 'Estudiante de medicina obcecado con revertir la muerte. Película de culto que adapta la serie de relatos de Lovecraft con humor negro y gore explícito. Stuart Gordon rodó tres adaptaciones lovecraftianas. La más fiel en espíritu, si no en letra.',
+    rating: '★★★★',
+    tags: ['Lovecraft', 'culto', 'gore', 'comedia negra']
+  },
+  {
+    id: 'ad2', type: 'film',
+    title: 'In the Mouth of Madness',
+    year: 1994,
+    director: 'John Carpenter',
+    based_on: 'Homenaje original a Lovecraft y Stephen King',
+    desc: 'Un investigador de seguros busca a un escritor de horror desaparecido. Los libros del escritor están volviendo reales. Carpenter construye una cinta metaliteraria sobre el poder de la ficción como vector de locura. La mejor película lovecraftiana no basada en Lovecraft.',
+    rating: '★★★★★',
+    tags: ['Carpenter', 'metaliteratura', 'locura', 'homenaje']
+  },
+  {
+    id: 'ad3', type: 'film',
+    title: 'The Color Out of Space',
+    year: 2019,
+    director: 'Richard Stanley',
+    based_on: 'El color del espacio exterior (Lovecraft, 1927, dominio público)',
+    desc: 'Adaptación con Nicolas Cage de uno de los relatos más apreciados de Lovecraft. Un meteorito cae en una granja rural y lo contamina todo con un color que no existe. La adaptación más respetuosa con el cosmicismo lovecraftiano de las últimas décadas.',
+    rating: '★★★★',
+    tags: ['Lovecraft', 'Richard Stanley', 'Nicolas Cage', 'dominio público']
+  },
+  {
+    id: 'ad4', type: 'film',
+    title: 'The Witch',
+    year: 2015,
+    director: 'Robert Eggers',
+    based_on: 'Inspiración en folklore puritano del siglo XVII',
+    desc: 'Una familia puritana expulsada de su asentamiento se enfrenta a algo en el bosque. No es estrictamente lovecraftiana pero captura el horror cósmico más que cualquier adaptación literal: lo sobrenatural es indiferente, el cosmos es hostil y la comprensión no ayuda.',
+    rating: '★★★★★',
+    tags: ['folk horror', 'puritanos', 'Eggers', 'atmósfera']
+  },
+  {
+    id: 'ad5', type: 'film',
+    title: 'Annihilation',
+    year: 2018,
+    director: 'Alex Garland',
+    based_on: 'Annihilation, Jeff VanderMeer (2014)',
+    desc: 'Una expedición entra en la Zona X, un área donde las leyes biológicas y físicas han sido reescritas. Adaptación del weird fiction contemporáneo más premiado. Garland captura la ininteligibilidad de lo sobrenatural: lo que hay dentro de la Zona X no es malvado ni benévolo. Solo es diferente.',
+    rating: '★★★★★',
+    tags: ['VanderMeer', 'weird fiction', 'Garland', 'biología cósmica']
+  },
+  {
+    id: 'ad6', type: 'film',
+    title: 'The Thing',
+    year: 1982,
+    director: 'John Carpenter',
+    based_on: 'Who Goes There? (John W. Campbell Jr., 1938)',
+    desc: 'Una estación antártica descubre una entidad extraterrestre que puede imitar cualquier forma de vida perfectamente. El horror lovecraftiano de Carpenter: lo incognoscible literalizado. El paranoico y el racional son igualmente vulnerables. El clásico absoluto del horror cósmico en cine.',
+    rating: '★★★★★',
+    tags: ['Carpenter', 'Antártida', 'imitación', 'paranoico']
+  },
+  {
+    id: 'ad7', type: 'film',
+    title: 'Midsommar',
+    year: 2019,
+    director: 'Ari Aster',
+    based_on: 'Original de Ari Aster',
+    desc: 'Un grupo de estudiantes visita una comunidad sueca para su festival de verano. Aster invierte el género: el horror en plena luz del día, en colores pastel, en rituales comunitarios. El folk horror como horror cósmico: los dioses locales son reales y completamente ajenos a la moral humana.',
+    rating: '★★★★',
+    tags: ['folk horror', 'Aster', 'rituales', 'luz']
+  },
+  // TV
+  {
+    id: 'ad8', type: 'tv',
+    title: 'True Detective (Temporada 1)',
+    year: 2014,
+    director: 'Nic Pizzolatto / Cary Fukunaga',
+    based_on: 'El Rey de Amarillo (Chambers, 1895) + Thomas Ligotti',
+    desc: 'Dos detectives investigan durante décadas una serie de asesinatos rituales en Louisiana. La primera temporada es el mayor logro del horror cósmico en televisión: Carcosa, el Rey de Amarillo y el pesimismo filosófico de Ligotti integrados en un thriller de crimen. El monólogo nihilista de Rust Cohle cambió la televisión.',
+    rating: '★★★★★',
+    tags: ['Chambers', 'Ligotti', 'Carcosa', 'Pizzolatto', 'Fukunaga']
+  },
+  {
+    id: 'ad9', type: 'tv',
+    title: 'Channel Zero',
+    year: '2016-2018',
+    director: 'Nick Antosca (creador)',
+    based_on: 'Creepypastas / original',
+    desc: 'Antología de cuatro temporadas que adapta creepypastas y originals en el espíritu del weird fiction. Cada temporada es una novela corta de horror atmosférico. Candle Cove (T1) y The Butcher\'s Block (T3) son las cumbres del horror lovecraftiano en formato episódico reciente.',
+    rating: '★★★★',
+    tags: ['antología', 'weird fiction', 'creepypasta', 'atmosférico']
+  },
+  {
+    id: 'ad10', type: 'tv',
+    title: 'The Outsider',
+    year: 2020,
+    director: 'Jason Bateman / Richard Price',
+    based_on: 'The Outsider, Stephen King (2018)',
+    desc: 'Un crimen imposible lleva a los investigadores a enfrentarse a algo que no puede existir pero que existe. King llevando el horror cósmico a su territorio habitual con un resultado que deja la racionalidad sin respuestas. La segunda mitad de la serie abraza el cosmicismo sin disculparse.',
+    rating: '★★★★',
+    tags: ['King', 'imposible', 'racional vs sobrenatural']
+  },
+  // VIDEOJUEGOS
+  {
+    id: 'ad11', type: 'game',
+    title: 'Bloodborne',
+    year: 2015,
+    developer: 'FromSoftware (Hidetaka Miyazaki)',
+    based_on: 'Lovecraft + Stoker + Machen (inspiración)',
+    desc: 'La ciudad de Yharnam está siendo devorada por una plaga que transforma a sus habitantes. El juego es la adaptación más lograda del horror cósmico a cualquier medio interactivo: el cosmicismo lovecraftiano se convierte en mecánica de juego. El conocimiento daña (baja la Humanidad). Los dioses existen y son cognoscibles, y eso es lo peor. La Gran Voluntad, los Grandes Seres Antiguos y Kos son el Mito traducido a imágenes.',
+    rating: '★★★★★',
+    tags: ['Miyazaki', 'FromSoftware', 'Yharnam', 'sanity', 'dioses']
+  },
+  {
+    id: 'ad12', type: 'game',
+    title: 'Amnesia: The Dark Descent',
+    year: 2010,
+    developer: 'Frictional Games',
+    based_on: 'Horror gótico + Lovecraft (inspiración)',
+    desc: 'Daniel despierta en un castillo sin memoria. La mecánica central es lovecraftiana: mirar a los monstruos daña la cordura; ignorarlos es la estrategia correcta. El juego más influyente del horror de supervivencia de la última década. Creó el subgénero de "horror sin combate" que domina el medio.',
+    rating: '★★★★★',
+    tags: ['sanity mechanic', 'Frictional', 'sin combate', 'innombrable']
+  },
+  {
+    id: 'ad13', type: 'game',
+    title: 'Call of Cthulhu: Dark Corners of the Earth',
+    year: 2005,
+    developer: 'Headfirst Productions',
+    based_on: 'La sombra sobre Innsmouth + La llamada de Cthulhu (DP)',
+    desc: 'Adaptación directa de Innsmouth con mecánicas de cordura y sin combate durante la primera hora. Técnicamente imperfecto, pero captura el horror de la ciudad portuaria con más fidelidad que ninguna otra adaptación. La escena de la persecución en el hotel Gilman es el referente del horror de persecución en videojuegos.',
+    rating: '★★★',
+    tags: ['Innsmouth', 'Lovecraft', 'cordura', 'Deep Ones']
+  },
+  {
+    id: 'ad14', type: 'game',
+    title: 'Cultist Simulator',
+    year: 2018,
+    developer: 'Weather Factory (Alexis Kennedy)',
+    based_on: 'Universo original inspirado en Lovecraft y los Golden Dawn',
+    desc: 'Juego de cartas y gestión de recursos sobre fundar un culto y alcanzar la inmortalidad o la locura. El horror cósmico como mecánica narrativa: el conocimiento se acumula, los errores son permanentes, las entidades tienen necesidades que no explican. El texto es lo más próximo a la prosa lovecraftiana en los videojuegos modernos.',
+    rating: '★★★★',
+    tags: ['culto', 'Kennedy', 'narrativo', 'cartas']
+  },
+  {
+    id: 'ad15', type: 'game',
+    title: 'Control',
+    year: 2019,
+    developer: 'Remedy Entertainment',
+    based_on: 'New Weird + SCP Foundation (inspiración)',
+    desc: 'Jesse Faden llega a la Oldest House, sede de la Oficina Federal de Control, justo cuando una entidad llamada el Hiss la toma. El juego es weird fiction como blockbuster: los paraobjetos, el Astreo y el lenguaje burocrático que intenta clasificar lo inclasificable son directamente lovecraftianos. La influencia del SCP Foundation es explícita y celebrada.',
+    rating: '★★★★★',
+    tags: ['New Weird', 'SCP', 'Remedy', 'burocracia cósmica']
+  },
+  // MÚSICA
+  {
+    id: 'ad16', type: 'music',
+    title: 'Cryo Chamber (sello discográfico)',
+    year: '2012–presente',
+    artist: 'Varios artistas',
+    based_on: 'Ambient lovecraftiano / dark ambient',
+    desc: 'Sello discográfico especializado en dark ambient de temática lovecraftiana. Sus compilaciones —Cthulhu, Hastur, Azathoth, Nyarlathotep— son el equivalente sonoro de las ilustraciones de Zdzisław Beksiński: atmósferas de incomodidad cósmica sin resolución. Gratuito en Bandcamp en muchos casos.',
+    rating: '★★★★★',
+    tags: ['dark ambient', 'Bandcamp', 'atmosférico', 'gratuito']
+  },
+  {
+    id: 'ad17', type: 'music',
+    title: 'The Frozen Throne (World of Warcraft) — Arthas theme',
+    year: 2003,
+    artist: 'Jason Hayes',
+    based_on: 'Inspiración en temas cósmicos y pérdida de humanidad',
+    desc: 'No es Lovecraft, pero el arco de Arthas Menethil es horror cósmico funcional: el protagonista alcanza el conocimiento, lo acepta, y se convierte en herramienta de algo más grande. La música de Hayes acompaña esa transformación con monumentalidad que muy pocas bandas sonoras han igualado en el género.',
+    rating: '★★★★',
+    tags: ['videojuego', 'épico', 'transformación', 'horror indirecto']
+  },
+  {
+    id: 'ad18', type: 'music',
+    title: 'Lustmord — Heresy',
+    year: 1990,
+    artist: 'Lustmord (Brian Williams)',
+    based_on: 'Dark ambient industrial',
+    desc: 'Uno de los álbumes fundacionales del dark ambient. Brian Williams grabó parte de él en la Catedral de San Bartolomé en Armenia usando las resonancias del edificio. El resultado es exactamente lo que suena cuando algo que dormía desde antes del Pleistoceno empieza a despertarse. Sin referencias explícitas a Lovecraft pero innegablemente cósmico.',
+    rating: '★★★★★',
+    tags: ['dark ambient', 'Lustmord', 'industrial', 'fundacional']
+  }
+];
+
+// ── TRIVIA — Preguntas sobre el género ──────────────────────────
+const TRIVIA_QUESTIONS = [
+  {
+    q: '¿Quién creó el topónimo "Carcosa", adoptado luego por Robert W. Chambers?',
+    options: ['H.P. Lovecraft', 'Ambrose Bierce', 'Arthur Machen', 'Lord Dunsany'],
+    correct: 1,
+    explanation: 'Ambrose Bierce creó Carcosa en su relato "Un habitante de Carcosa" (1886). Chambers lo adoptó en "El Rey de Amarillo" (1895), y de ahí pasó al Mito de Cthulhu y a "True Detective".'
+  },
+  {
+    q: '¿En qué año se publicó "La llamada de Cthulhu" de Lovecraft?',
+    options: ['1923', '1926', '1928', '1931'],
+    correct: 2,
+    explanation: '"La llamada de Cthulhu" se publicó en la revista Weird Tales en febrero de 1928. Es el texto que codificó el Mito de Cthulhu tal como lo conocemos.'
+  },
+  {
+    q: '¿Qué crítico literario consideró "El sauce" de Blackwood el mejor relato de horror jamás escrito?',
+    options: ['Stephen King', 'H.P. Lovecraft', 'Edgar Allan Poe', 'M.R. James'],
+    correct: 1,
+    explanation: 'H.P. Lovecraft, en su ensayo "El Horror Sobrenatural en Literatura" (1927), calificó "El sauce" de Algernon Blackwood como la cumbre del género.'
+  },
+  {
+    q: '¿Cuál es el nombre árabe original del Necronomicon según Lovecraft?',
+    options: ['Kitab al-Azif', 'Al Azif', 'Kitab al-Alhazred', 'Liber Mortis'],
+    correct: 1,
+    explanation: 'En "La historia del Necronomicon" (1927), Lovecraft establece que el nombre árabe original es "Al Azif", el sonido que producen los insectos nocturnos y que se atribuía a los demonios.'
+  },
+  {
+    q: '¿Qué arquitectura caracteriza a la ciudad de R\'lyeh?',
+    options: ['Gótica', 'No euclidiana', 'Babilónica', 'Ciclópea plana'],
+    correct: 1,
+    explanation: 'R\'lyeh está construida según geometría no euclidiana: los ángulos son incorrectos para el espacio tridimensional normal. Esto desequilibra la percepción de quienes la visitan.'
+  },
+  {
+    q: '¿Cuál fue el primer libro publicado por la editorial Arkham House?',
+    options: ['Los mitos de Cthulhu', 'La sombra sobre Innsmouth', 'En las montañas de la locura', 'El caso de Charles Dexter Ward'],
+    correct: 1,
+    explanation: '"La sombra sobre Innsmouth" (1939) fue el primer libro de Arkham House, la editorial fundada por August Derleth y Donald Wandrei para preservar la obra de Lovecraft.'
+  },
+  {
+    q: '¿Qué filosófia personal de Lovecraft fundamenta su horror?',
+    options: ['Nihilismo activo', 'Cosmicismo', 'Solipsismo', 'Determinismo fatalista'],
+    correct: 1,
+    explanation: 'El cosmicismo: la posición de que el universo es inconmensurablemente vasto e indiferente a la humanidad, y que cualquier entidad poderosa que exista no tiene consideración moral hacia nosotros.'
+  },
+  {
+    q: '¿De qué planeta exterior son originarios los Mi-Go del Mito de Cthulhu?',
+    options: ['Marte', 'Saturno', 'Yuggoth (Plutón)', 'Arcturus'],
+    correct: 2,
+    explanation: 'Los Mi-Go son de Yuggoth, que Lovecraft identificó con Plutón (descubierto en 1930, el mismo año que escribió "El susurrador en la oscuridad"). Visitan la Tierra para extraer minerales.'
+  },
+  {
+    q: '¿Cuál es la característica principal de los Deep Ones que los hace especialmente perturbadores?',
+    options: ['Su inmortalidad', 'Su reproducción con humanos', 'Su telepatía', 'Su arquitectura submarina'],
+    correct: 1,
+    explanation: 'La descendencia híbrida entre Deep Ones y humanos pasa décadas con apariencia humana normal antes de experimentar "La Transformación" y descender al mar. La amenaza viene de dentro del linaje.'
+  },
+  {
+    q: '¿En qué novela de Lovecraft se describen los Shoggoths y los Primigenios en detalle?',
+    options: ['El horror de Dunwich', 'La llamada de Cthulhu', 'En las montañas de la locura', 'El caso de Charles Dexter Ward'],
+    correct: 2,
+    explanation: '"En las montañas de la locura" (1931) describe la expedición antártica que descubre la ciudad de los Primigenios y los Shoggoths que los esclavizaron y después se rebelaron.'
+  },
+  {
+    q: '¿Qué significa "Tekeli-li" en el Mito?',
+    options: ['Soy libre', 'Nombre de Azathoth', 'Grito/vocalización de los Shoggoths', 'Título de un Gran Antiguo menor'],
+    correct: 2,
+    explanation: '"Tekeli-li" es la vocalización que producen los Shoggoths, capaces de imitar cualquier sonido. Aparece primero en "La narración de Arthur Gordon Pym" de Poe (1838) y Lovecraft la adoptó explícitamente.'
+  },
+  {
+    q: '¿Qué editorial publicó la primera edición del juego de rol "La Llamada de Cthulhu"?',
+    options: ['TSR', 'Chaosium', 'Games Workshop', 'White Wolf'],
+    correct: 1,
+    explanation: 'Chaosium publicó "La llamada de Cthulhu" (Call of Cthulhu) en 1981. Es uno de los juegos de rol más longevos en publicación continua y definió el horror lovecraftiano interactivo.'
+  },
+  {
+    q: '¿Qué artista visual popularizó las ilustraciones del Mito en los años 70-80?',
+    options: ['H.R. Giger', 'Bernie Wrightson', 'Virgil Finlay', 'Michael Whelan'],
+    correct: 0,
+    explanation: 'H.R. Giger, aunque nunca ilustró Lovecraft directamente, creó la estética biomecánica que definió visualmente el horror cósmico en cine y arte. Alien (1979) es lovecraftiano en espíritu y giger en forma.'
+  },
+  {
+    q: '¿Quién escribió "El pueblo blanco", considerado por Lovecraft una de las mejores historias de horror?',
+    options: ['Lord Dunsany', 'Algernon Blackwood', 'Arthur Machen', 'M.R. James'],
+    correct: 2,
+    explanation: 'Arthur Machen escribió "El pueblo blanco" (1904). Lovecraft la situó entre las mejores del género en su ensayo de 1927, por su tratamiento de lo sobrenatural como algo radicalmente ajeno a la moral humana.'
+  },
+  {
+    q: '¿Cuál es el nombre completo de Nyarlathotep en el Mito?',
+    options: ['El Mensajero Reptante de los Dioses Exteriores', 'El Caos Ciego', 'El Que Camina entre los Sueños', 'El Enviado Sin Nombre'],
+    correct: 0,
+    explanation: 'Nyarlathotep es "El Mensajero Reptante" o "El Alma de los Dioses Exteriores". Es único entre las entidades del Mito por tener personalidad, voluntad propia y gusto por la interacción humana.'
+  },
+  {
+    q: '¿Qué término acuñó August Derleth para el sistema ético que añadió al Mito de Cthulhu?',
+    options: ['El Panteón Cósmico', 'Los Grandes Antiguos vs Dioses Arquetípicos', 'La dualidad Cthulhu/Nodens', 'El esquema derlethiano'],
+    correct: 3,
+    explanation: 'Derleth introdujo una dualidad bien/mal en el Mito (rechazada por puristas) en la que los Grandes Antiguos son malignos y hay fuerzas opuestas "buenas". Se conoce como "el esquema derlethiano" y es considerado una distorsión del cosmicismo amoral de Lovecraft.'
+  },
+  {
+    q: '¿En qué ciudad real de Estados Unidos se inspiró Lovecraft para crear Arkham?',
+    options: ['Boston', 'Providence', 'Salem', 'Portsmouth'],
+    correct: 2,
+    explanation: 'Salem, Massachusetts, con su historia de juicios de brujas del siglo XVII, inspiró la atmósfera de Arkham. Providence, Rhode Island, donde Lovecraft vivió, inspira otros aspectos de su geografía ficticia.'
+  },
+  {
+    q: '¿Cuál es el título del ensayo teórico de Lovecraft sobre el género de horror?',
+    options: ['El Arte del Horror', 'El Horror Sobrenatural en Literatura', 'Sobre el Miedo Cósmico', 'Notas sobre lo Extraño'],
+    correct: 1,
+    explanation: '"El Horror Sobrenatural en Literatura" (Supernatural Horror in Literature, 1927) es el manifiesto teórico de Lovecraft. Está en dominio público y es la guía más completa del género escrita por uno de sus creadores.'
+  },
+  {
+    q: '¿Qué juego de FromSoftware es considerado la mejor adaptación del horror cósmico en videojuegos?',
+    options: ['Dark Souls', 'Demon\'s Souls', 'Bloodborne', 'Elden Ring'],
+    correct: 2,
+    explanation: 'Bloodborne (2015) de FromSoftware/Hidetaka Miyazaki está construido sobre el cosmicismo lovecraftiano: el conocimiento daña, los dioses existen y son incognoscibles, y la ciudad de Yharnam es una Innsmouth victoriana.'
+  },
+  {
+    q: '¿Cuál es la obra más larga de Lovecraft?',
+    options: ['El caso de Charles Dexter Ward', 'En las montañas de la locura', 'La búsqueda en sueños de la ignota Kadath', 'El sueño en la casa de la bruja'],
+    correct: 1,
+    explanation: '"En las montañas de la locura" (1931, ~40.000 palabras) es la obra más extensa de Lovecraft. Lovecraft la consideraba una novela corta y tuvo dificultades para publicarla por su longitud.'
+  }
+];
+
+// ── ESCENARIOS DE ROL ─────────────────────────────────────────────
+const RPG_SCENARIOS = [
+  {
+    id: 'rp1',
+    title: 'El Archivo que se Corrige Solo',
+    tone: 'Investigación · Paranoico',
+    system: 'Call of Cthulhu / Delta Green / Sistema propio',
+    premise: 'Los investigadores son contratados para catalogar el archivo de un académico fallecido. Los documentos que catalogan están en un orden diferente al día siguiente. Los registros de lo que catalogaron no coinciden con lo que recuerdan haber leído. Alguien —o algo— está reescribiendo el archivo.',
+    hooks: ['Un documento lleva la firma de alguien que no debería saber de la existencia del archivo', 'Las fotografías del académico muestran a alguien diferente en cada copia', 'El inventario original tiene una entrada para un objeto que nadie puede encontrar pero todos recuerdan haber visto'],
+    threat: 'La Que Anota. No es hostil. Solo corrige.',
+    escalation: 'Los propios apuntes de los investigadores empiezan a mostrar correcciones que ninguno realizó.'
+  },
+  {
+    id: 'rp2',
+    title: 'Puerto sin Nombre en el Mapa',
+    tone: 'Horror costero · Descubrimiento',
+    system: 'Call of Cthulhu / Gumshoe / Mothership',
+    premise: 'Los investigadores llegan a un pueblo costero que no aparece en ningún mapa publicado después de 1943. Los habitantes son amables en exceso. El puerto tiene barcos que nadie ha visto salir ni llegar. El sacerdote local predica sobre "la gracia que viene del mar" con una convicción que resulta más perturbadora que el contenido del sermón.',
+    hooks: ['Un niño del pueblo pregunta si los investigadores "ya sienten el llamado"', 'El único habitante que parece normal lleva un ojo de cristal que no es de cristal', 'El agua del grifo tiene un sabor que varios investigadores describen como "recuerdos de alguien que no soy yo"'],
+    threat: 'Deep Ones. Pero el pueblo no es una trampa: es una invitación.',
+    escalation: 'Uno de los investigadores empieza a soñar en un idioma que no conoce pero entiende perfectamente.'
+  },
+  {
+    id: 'rp3',
+    title: 'La Expedición del Año Equivocado',
+    tone: 'Exploración · Temporal',
+    system: 'Delta Green / Trail of Cthulhu / Any system',
+    premise: 'Los investigadores son reclutados para completar una expedición científica cuyos miembros originales volvieron con un problema: todos dan fechas diferentes para su regreso, y las fechas son incompatibles entre sí. Uno insiste en que volvieron hace tres semanas. Otro jura que volvieron hace cuatro años. Los registros del laboratorio apoyan ambas versiones.',
+    hooks: ['Las muestras geológicas tienen fechas de datación que preceden a la formación de la Tierra', 'Uno de los expedicionarios originales tiene recuerdos del futuro de los investigadores que los están interrogando', 'El diario de la expedición está escrito por alguien que no participó en ella'],
+    threat: 'Una anomalía temporal centrada en algo que la expedición perturbó y no debería haber perturbado.',
+    escalation: 'Los investigadores empiezan a encontrar sus propios objetos personales en los registros de la expedición original.'
+  },
+  {
+    id: 'rp4',
+    title: 'El Libro que Viene Solo',
+    tone: 'Psicológico · Paranoico',
+    system: 'Call of Cthulhu / Kult / Sistema narrativo',
+    premise: 'Un miembro de la comunidad académica recibe en préstamo interbibliote-cario un libro que no solicitó, de una biblioteca que afirma no haber enviado nada. El libro está en un idioma que el destinatario no reconoce pero que puede leer. No puede recordar lo que leyó, solo lo que sintió al leerlo.',
+    hooks: ['Tres personas más en la misma ciudad recibieron el mismo libro el mismo día desde tres bibliotecas diferentes', 'El libro tiene anotaciones marginales de lectores anteriores que responden preguntas que el lector actual todavía no ha formulado', 'Devolver el libro es físicamente posible; el libro vuelve'],
+    threat: 'El libro no es malicioso. Es una puerta. Y las puertas funcionan en ambas direcciones.',
+    escalation: 'Las notas del lector en el margen empiezan a responder las preguntas que hace en voz alta mientras lee.'
+  },
+  {
+    id: 'rp5',
+    title: 'La Ciudad que Cambia de Noche',
+    tone: 'Urbano · Paranoia geográfica',
+    system: 'Delta Green / Night\'s Black Agents / Blades in the Dark',
+    premise: 'Los investigadores viven o visitan una ciudad normal. Empiezan a notar discrepancias: calles que no recuerdan, edificios que parecen haber estado siempre pero que ningún registro menciona, vecinos que se comportan como si los investigadores hubieran tenido conversaciones que no ocurrieron.',
+    hooks: ['Un mapa de la ciudad del siglo pasado muestra exactamente la misma discrepancia geográfica', 'Hay un edificio en el que nadie ha entrado pero que todo el mundo recuerda haber visitado', 'La discrepancia geográfica corresponde exactamente al plano de una ciudad que fue destruida y cuyos planos se daban por perdidos'],
+    threat: 'La ciudad es dos ciudades superpuestas. La segunda ciudad tiene sus propios habitantes.',
+    escalation: 'Los habitantes de la segunda ciudad empiezan a reconocer a los investigadores.'
+  },
+  {
+    id: 'rp6',
+    title: 'El Sueño Compartido',
+    tone: 'Onírico · Colectivo',
+    system: 'Call of Cthulhu / Dreamhunter / Powered by the Apocalypse',
+    premise: 'Un grupo de personas sin relación entre sí reportan el mismo sueño exacto durante siete noches consecutivas. Los investigadores son llamados para encontrar la conexión. La conexión existe: todos visitaron el mismo edificio en algún momento de su vida. El edificio fue demolido en 1987. O eso dicen los registros.',
+    hooks: ['En el sueño, uno de los soñadores es siempre el antagonista sin recordarlo al despertar', 'El sueño avanza cada noche, como episodios de algo que tiene argumento', 'La noche ocho, uno de los soñadores no se despierta'],
+    threat: 'Algo en las Tierras del Sueño encontró un grupo de acceso y está construyendo una puerta.',
+    escalation: 'Los investigadores que estudian el caso empiezan a tener el mismo sueño.'
   }
 ];
 
@@ -802,6 +1344,9 @@ function navigate(pageId, chapterIdx) {
   if (pageId === 'library') renderLibrary();
   if (pageId === 'authors') renderAuthors();
   if (pageId === 'timeline') renderTimeline();
+  if (pageId === 'adaptations') renderAdaptations();
+  if (pageId === 'trivia') initTrivia();
+  if (pageId === 'rpg') renderRPG();
 
   // Ocultar menú móvil
   closeMobileMenu();
@@ -1065,7 +1610,7 @@ function renderGlossary() {
     return;
   }
 
-  const typeLabels = { entity: 'Entidad', place: 'Lugar', symbol: 'Símbolo', rite: 'Rito' };
+  const typeLabels = { entity: 'Entidad', place: 'Lugar', symbol: 'Símbolo', rite: 'Rito', mythos: 'Mito (DP)' };
   filtered.forEach(entry => {
     const card = document.createElement('div');
     card.className = 'glossary-card';
@@ -1097,14 +1642,17 @@ document.getElementById('glossary-search').addEventListener('input', e => {
   renderGlossary();
 });
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
+document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentFilter = btn.dataset.filter;
     renderGlossary();
   });
 });
+
+const randomEntryBtn = document.getElementById('btn-random-entry');
+if (randomEntryBtn) randomEntryBtn.addEventListener('click', openRandomEntry);
 
 /* ─────────────────────────────────────────────────────────────────
    9. GENERADORES
@@ -1776,6 +2324,241 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   9e. ADAPTACIONES — Cine, TV, Videojuegos, Música
+   ───────────────────────────────────────────────────────────────── */
+
+function renderAdaptations() {
+  const container = document.getElementById('adaptations-container');
+  if (!container || container.children.length > 0) return;
+
+  const typeLabels = { film: '🎬 Cine', tv: '📺 TV / Serie', game: '🎮 Videojuego', music: '🎵 Música' };
+  const types = ['film', 'tv', 'game', 'music'];
+
+  types.forEach(type => {
+    const items = ADAPTATIONS.filter(a => a.type === type);
+    if (!items.length) return;
+
+    const section = document.createElement('div');
+    section.className = 'adapt-section';
+    section.innerHTML = `<h3 class="adapt-type-title">${typeLabels[type]}</h3>`;
+
+    const grid = document.createElement('div');
+    grid.className = 'adapt-grid';
+
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'adapt-card';
+      card.setAttribute('tabindex', '0');
+      const creator = item.director || item.developer || item.artist || '';
+      card.innerHTML = `
+        <div class="adapt-year">${item.year}</div>
+        <h4 class="adapt-title">${item.title}</h4>
+        <p class="adapt-creator">${creator}</p>
+        <p class="adapt-based">${item.based_on}</p>
+        <div class="adapt-rating">${item.rating}</div>
+      `;
+      card.addEventListener('click', () => openModal({
+        eyebrow: typeLabels[item.type] + ' · ' + item.year,
+        title: item.title,
+        body: `
+          <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent);margin-bottom:0.5rem;">${creator}</p>
+          <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-dim);margin-bottom:1rem;font-style:italic;">Basado en / inspirado por: ${item.based_on}</p>
+          <p>${item.desc}</p>
+          <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+            ${(item.tags||[]).map(t=>`<span style="border:1px solid var(--border-light);font-family:var(--font-mono);font-size:0.6rem;padding:2px 7px;color:var(--text-dim);">${t}</span>`).join('')}
+          </div>
+          <p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--gold);margin-top:1rem;">${item.rating}</p>
+        `
+      }));
+      card.addEventListener('keydown', e => e.key === 'Enter' && card.click());
+      grid.appendChild(card);
+    });
+
+    section.appendChild(grid);
+    container.appendChild(section);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9f. TRIVIA — Cuestionario del género
+   ───────────────────────────────────────────────────────────────── */
+
+function initTrivia() {
+  const container = document.getElementById('trivia-container');
+  if (!container) return;
+  // Reset state each visit so user can replay
+  container.innerHTML = '';
+
+  let currentQ = 0;
+  let score = 0;
+  let answered = false;
+  const shuffled = [...TRIVIA_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 10);
+
+  function renderQuestion() {
+    container.innerHTML = '';
+    if (currentQ >= shuffled.length) {
+      renderResult();
+      return;
+    }
+    const q = shuffled[currentQ];
+    const progress = document.createElement('div');
+    progress.className = 'trivia-progress';
+    progress.innerHTML = `<span>${currentQ + 1} / ${shuffled.length}</span><div class="trivia-bar"><div class="trivia-bar-fill" style="width:${((currentQ)/shuffled.length)*100}%"></div></div><span>${score} ✓</span>`;
+
+    const qEl = document.createElement('div');
+    qEl.className = 'trivia-question';
+    qEl.innerHTML = `<p class="trivia-q-text">${q.q}</p>`;
+
+    const opts = document.createElement('div');
+    opts.className = 'trivia-options';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'trivia-opt';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        if (answered) return;
+        answered = true;
+        const correct = i === q.correct;
+        if (correct) score++;
+        btn.classList.add(correct ? 'trivia-correct' : 'trivia-wrong');
+        opts.querySelectorAll('.trivia-opt')[q.correct].classList.add('trivia-correct');
+        // Show explanation
+        const exp = document.createElement('p');
+        exp.className = 'trivia-explanation';
+        exp.textContent = q.explanation;
+        opts.after(exp);
+        // Next button
+        const next = document.createElement('button');
+        next.className = 'btn-generate';
+        next.textContent = currentQ < shuffled.length - 1 ? 'Siguiente →' : 'Ver resultado →';
+        next.addEventListener('click', () => { currentQ++; answered = false; renderQuestion(); });
+        exp.after(next);
+      });
+      opts.appendChild(btn);
+    });
+
+    container.appendChild(progress);
+    container.appendChild(qEl);
+    container.appendChild(opts);
+  }
+
+  function renderResult() {
+    const pct = Math.round((score / shuffled.length) * 100);
+    const grades = [
+      [90, 'NIVEL SIGMA — El grimorio te reconoce como custodio.'],
+      [70, 'NIVEL DELTA — Conocimiento sólido. La Orden te observa con interés.'],
+      [50, 'NIVEL GAMMA — Iniciado con potencial. Sigue leyendo.'],
+      [0,  'NIVEL OMEGA — El grimorio sugiere releer los capítulos básicos.']
+    ];
+    const grade = grades.find(([min]) => pct >= min);
+    container.innerHTML = `
+      <div class="trivia-result">
+        <p class="trivia-result-score">${score} / ${shuffled.length}</p>
+        <p class="trivia-result-pct">${pct}%</p>
+        <p class="trivia-result-grade">${grade[1]}</p>
+        <button class="btn-generate" id="trivia-retry">Repetir cuestionario</button>
+      </div>
+    `;
+    document.getElementById('trivia-retry').addEventListener('click', () => {
+      currentQ = 0; score = 0; answered = false;
+      const newShuffled = [...TRIVIA_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 10);
+      shuffled.splice(0, shuffled.length, ...newShuffled);
+      renderQuestion();
+    });
+  }
+
+  renderQuestion();
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9g. GENERADOR DE ESCENARIOS DE ROL
+   ───────────────────────────────────────────────────────────────── */
+
+function renderRPG() {
+  const container = document.getElementById('rpg-container');
+  if (!container) return;
+  if (container.children.length > 0) return;
+
+  RPG_SCENARIOS.forEach(sc => {
+    const card = document.createElement('div');
+    card.className = 'rpg-card';
+    card.setAttribute('tabindex', '0');
+    card.innerHTML = `
+      <p class="rpg-tone">${sc.tone}</p>
+      <h3 class="rpg-title">${sc.title}</h3>
+      <p class="rpg-system">${sc.system}</p>
+      <p class="rpg-premise-short">${sc.premise.substring(0, 120)}…</p>
+    `;
+    card.addEventListener('click', () => openModal({
+      eyebrow: sc.tone + ' · ' + sc.system,
+      title: sc.title,
+      body: `
+        <h4>Premisa</h4>
+        <p>${sc.premise}</p>
+        <h4>Ganchos iniciales</h4>
+        <ul style="list-style:none;margin:0.5rem 0 1rem;">
+          ${sc.hooks.map(h => `<li style="padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;color:var(--text);">— ${h}</li>`).join('')}
+        </ul>
+        <h4>Amenaza</h4>
+        <p>${sc.threat}</p>
+        <h4>Escalada</h4>
+        <p style="font-style:italic;color:var(--accent-light);">${sc.escalation}</p>
+        <div style="margin-top:1.5rem;">
+          <button class="btn-passage" id="rpg-copy-${sc.id}">⎘ Copiar escenario</button>
+          <button class="btn-passage" id="rpg-export-${sc.id}" style="margin-left:0.5rem;">↓ Exportar TXT</button>
+        </div>
+      `
+    }));
+    card.addEventListener('keydown', e => e.key === 'Enter' && card.click());
+    container.appendChild(card);
+  });
+
+  // Botón de escenario aleatorio
+  const randomBtn = document.getElementById('rpg-random-btn');
+  if (randomBtn) {
+    randomBtn.addEventListener('click', () => {
+      const sc = RPG_SCENARIOS[Math.floor(Math.random() * RPG_SCENARIOS.length)];
+      openModal({
+        eyebrow: '⚄ ESCENARIO ALEATORIO · ' + sc.tone,
+        title: sc.title,
+        body: `
+          <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-dim);margin-bottom:1rem;">${sc.system}</p>
+          <h4>Premisa</h4><p>${sc.premise}</p>
+          <h4>Ganchos</h4>
+          <ul style="list-style:none;">
+            ${sc.hooks.map(h=>`<li style="padding:0.3rem 0;border-bottom:1px solid var(--border);font-size:0.88rem;">— ${h}</li>`).join('')}
+          </ul>
+          <h4>Amenaza</h4><p>${sc.threat}</p>
+          <h4>Escalada</h4><p style="font-style:italic;color:var(--accent-light);">${sc.escalation}</p>
+        `
+      });
+    });
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9h. ENTRADA ALEATORIA (glosario / bestiario)
+   ───────────────────────────────────────────────────────────────── */
+
+function openRandomEntry() {
+  const pool = [
+    ...GLOSSARY_ENTRIES.map(e => ({
+      eyebrow: ({ entity:'Entidad', place:'Lugar', symbol:'Símbolo', rite:'Rito', mythos:'Mito (DP)' }[e.type] || e.type),
+      title: e.name,
+      body: `<p>${e.full}</p>${e.tags?`<p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-dim);margin-top:1rem;">${e.tags.map(t=>`[${t}]`).join(' ')}</p>`:''}`
+    })),
+    ...BESTIARY.map(b => ({
+      eyebrow: b.class,
+      title: b.name,
+      body: `<p style="font-style:italic;color:var(--text-dim);margin-bottom:1rem;">${b.aka}</p><p>${b.desc}</p><h4>Datos de registro</h4>${Object.entries(b.stats).map(([k,v])=>`<div class="modal-stat-row"><span class="modal-stat-label">${k}</span><span class="modal-stat-value">${v}</span></div>`).join('')}`
+    }))
+  ];
+  const entry = pool[Math.floor(Math.random() * pool.length)];
+  openModal(entry);
+}
+
 
 /* ─────────────────────────────────────────────────────────────────
    18. MANEJO GLOBAL DE ERRORES (HARDENING)
