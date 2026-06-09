@@ -910,6 +910,326 @@ const RPG_SCENARIOS = [
   }
 ];
 
+/* ─────────────────────────────────────────────────────────────────
+   1c. DATOS NUEVOS — Neologismos, Guía de lectura, Sistemas de rol,
+       Ilustradores, Recursos externos
+   ───────────────────────────────────────────────────────────────── */
+
+const NEOLOGISMS = [
+  { id: 'nl1', term: 'Eldritch', origin: 'Inglés arcaico (Old English: el + rice)', es: 'Arcano, extraño, sobrenatural',
+    def: 'Término que Lovecraft recuperó del inglés arcaico para describir algo de naturaleza sobrenatural, extrañamente ajeno y perturbador. Implica no solo lo misterioso sino lo que pertenece a un orden diferente de la realidad. La palabra resistió la traducción durante décadas; en español se usa "arcano" o simplemente "lovecraftiano" como aproximación.',
+    usage: '"Una luz eldritch iluminó la cámara con una luminiscencia que no procedía de ninguna fuente identificable."',
+    freq: 'Muy alta — Lovecraft la usa en casi todos sus relatos' },
+
+  { id: 'nl2', term: 'Cyclopean', origin: 'Griego: Κυκλώπειος', es: 'Ciclópeo',
+    def: 'Arquitectura de bloques de piedra monumentales sin argamasa, de proporciones que exceden cualquier capacidad constructiva humana documentada. Lovecraft lo usó para describir las construcciones de los Grandes Antiguos y los Primigenios. El término real proviene de las fortificaciones micénicas que los griegos atribuían a los Cíclopes.',
+    usage: '"Las paredes eran de construcción ciclópea, con bloques irregulares de un tamaño que ninguna máquina humana podría mover."',
+    freq: 'Alta — especialmente en En las montañas de la locura' },
+
+  { id: 'nl3', term: 'Squamous', origin: 'Latín: squama (escama)', es: 'Escamoso, squamoso',
+    def: 'Cubierto de escamas o de textura parecida. Lovecraft lo usa con tanta frecuencia que se convirtió en término marcador de su estilo. En su obra describe principalmente la superficie de entidades acuáticas o semi-acuáticas. Se volvió objeto de parodia: "squamous", "rugose" y "gibbous" forman la triada de adjetivos más imitada del autor.',
+    usage: '"La cosa squamosa se alzó del agua y nos miró con unos ojos que no tenían párpados."',
+    freq: 'Muy alta — parodiada con frecuencia por su sobreuso' },
+
+  { id: 'nl4', term: 'Rugose', origin: 'Latín: ruga (arruga)', es: 'Rugoso, con pliegues irregulares',
+    def: 'Con una superficie llena de arrugas, pliegues o protuberancias irregulares. Lovecraft lo usa para describir la textura de entidades y superficies que no se ajustan a ninguna forma orgánica reconocible. Junto con "squamous" y "gibbous" forma el vocabulario descriptivo más característico y más imitado de su obra.',
+    usage: '"Sus miembros rugosos se doblaban en ángulos que ningún esqueleto conocido podría producir."',
+    freq: 'Alta' },
+
+  { id: 'nl5', term: 'Gibbous', origin: 'Latín: gibbus (jorobado)', es: 'Giboso, convexa y prominente',
+    def: 'Con una protuberancia prominente; en astronomía describe la luna entre el cuarto y la luna llena. Lovecraft lo usa tanto para la luna como para describir formas orgánicas con bultos anómalos. La "luna gibosa" es imagen recurrente en su obra como elemento de atmósfera perturbadora.',
+    usage: '"La luna gibosa proyectaba sombras extrañas sobre el pantano cuando llegamos al umbral."',
+    freq: 'Alta — especialmente en descripciones nocturnas' },
+
+  { id: 'nl6', term: 'Blasphemous', origin: 'Griego: βλάσφημος', es: 'Blasfemo, sacrílego',
+    def: 'En Lovecraft, "blasfemo" no tiene connotación religiosa convencional: describe algo que viola el orden natural de la realidad, algo que no debería existir. Una geometría blasfema es una que viola las reglas del espacio. Una criatura blasfema es la que contradice la biología. El término seculariza la blasfemia y la convierte en categoría ontológica.',
+    usage: '"La geometría blasfema de la ciudad hacía que los ángulos rectos parecieran imposibles."',
+    freq: 'Muy alta — redefinición semántica central en su obra' },
+
+  { id: 'nl7', term: 'Tenebrous', origin: 'Latín: tenebrosus', es: 'Tenebroso, de oscuridad densa',
+    def: 'No simplemente oscuro, sino cubierto de una oscuridad cualitativa: más densa, más opaca, con características propias. Lovecraft lo usa para distinguir entre la ausencia de luz y la presencia activa de algo que ocupa el espacio de la luz.',
+    usage: '"Las profundidades tenebrosas de la cripta no respondían a la luz de la linterna como debería."',
+    freq: 'Media' },
+
+  { id: 'nl8', term: 'Noisome', origin: 'Inglés medio: noi (daño)', es: 'Nocivo, de olor pestilente',
+    def: 'Dañino, con un olor intensamente desagradable, físicamente repulsivo. Lovecraft lo usa casi siempre con implicaciones sensoriales: el olor de lo que no debería existir. Muchas entidades del Mito tienen un olor "noisome" o "fetid" que precede al encuentro visual.',
+    usage: '"Un hedor noisome emanaba de la abertura en la piedra, más viejo que la piedra misma."',
+    freq: 'Alta — el olfato como horror anticipatorio' },
+
+  { id: 'nl9', term: 'Batrachian', origin: 'Griego: βάτραχος (rana)', es: 'Batracio, con rasgos de anfibio',
+    def: 'Propio de los batracios (ranas, sapos, anfibios). Lovecraft lo usa para describir los rasgos faciales de los Deep Ones y otros seres acuáticos: el aspecto de Innsmouth incluye ojos que no parpadean, boca amplia y piel húmeda que los visitantes perciben como "vagamente batrachian" antes de entender qué están viendo.',
+    usage: '"Su cara tenía algo vagamente batracio que no supo identificar hasta que fue demasiado tarde."',
+    freq: 'Media — especialmente en La sombra sobre Innsmouth' },
+
+  { id: 'nl10', term: 'Furtive', origin: 'Latín: furtivus', es: 'Furtivo, sigiloso, evasivo',
+    def: 'Secreto, sigiloso, que evita ser observado. Lovecraft lo usa para describir tanto los movimientos de sus personajes humanos perturbadores como los de entidades no humanas. Los habitantes de Innsmouth son "furtivos"; los cultos son "furtivos". La cualidad de esconderse como marcador de culpabilidad cósmica.',
+    usage: '"Los habitantes del pueblo mostraban una actitud furtiva que no encajaba con la prosperidad de las calles."',
+    freq: 'Alta — descriptor sociológico del Mito' },
+
+  { id: 'nl11', term: 'Ichor', origin: 'Griego: ἰχώρ (fluido de los dioses)', es: 'Icor, fluido no-humano',
+    def: 'En mitología griega, el fluido que corre por las venas de los dioses en lugar de sangre. Lovecraft lo adopta para describir el fluido interno de las entidades del Mito: más espeso que la sangre, de color incorrecto, con un olor que los testigos no pueden describir exactamente. Su uso implica que la entidad es de naturaleza divina o al menos radicalmente no humana.',
+    usage: '"Un icor oscuro y espeso manaba de la herida, con un olor que no pertenecía a ninguna criatura conocida."',
+    freq: 'Media-alta' },
+
+  { id: 'nl12', term: 'Non-Euclidean', origin: 'Matemático: Bolyai, Lobachevsky, Riemann (siglo XIX)', es: 'No euclidiano',
+    def: 'Geometría en la que los axiomas de Euclides no se cumplen: las líneas paralelas pueden intersecarse, los ángulos de un triángulo no suman 180°. Lovecraft lo usa para describir arquitecturas y espacios donde el espacio tridimensional normal no rige. R\'lyeh es la instancia más famosa. El término es técnicamente preciso y fue introducido en la matemática real en el siglo XIX.',
+    usage: '"La arquitectura era claramente no euclidiana; los ángulos que debían ser rectos no lo eran, y moverse en línea recta resultaba en llegar a un punto diferente del de partida."',
+    freq: 'Media — pero de alto impacto conceptual' },
+
+  { id: 'nl13', term: 'Accursed', origin: 'Inglés: cursed (maldito)', es: 'Maldito, execrado',
+    def: 'Condenado, sujeto a una maldición, anatematizado. Lovecraft lo usa de forma más literal que metafórica: lugares que han sido "accursed" por el contacto con entidades del Mito presentan anomalías físicas documentables. No es metáfora moral: es descripción de una condición ontológica real en el universo del Mito.',
+    usage: '"Nadie había vivido en ese tramo de costa desde el año maldito en que el barco encalló."',
+    freq: 'Alta' },
+
+  { id: 'nl14', term: 'Ululate', origin: 'Latín: ululare', es: 'Ulular, aullar rítmicamente',
+    def: 'Emitir un sonido de aullido o gemido prolongado y rítmico. Lovecraft lo usa para los sonidos de los cultos en sus rituales, para los vientos en lugares malditos, y para las vocalizaciones de ciertas entidades. El sonido ulular tiene connotaciones de ritual y de algo que llama a otra cosa.',
+    usage: '"Desde las profundidades del bosque llegaba un ulular rítmico que no podía confundirse con el viento."',
+    freq: 'Media — sonido del ritual' },
+
+  { id: 'nl15', term: 'Charnel', origin: 'Latín: carnalis, a través del francés antiguo', es: 'Carnal, relativo a cadáveres',
+    def: 'Relativo a cadáveres y carne en descomposición. Un "charnel house" es un depósito de huesos humanos. Lovecraft lo usa con frecuencia para describir olores, espacios y entidades que guardan relación con la muerte y la materia orgánica en descomposición. Implica una proximidad con la muerte que va más allá de lo metafórico.',
+    usage: '"El olor charnel que impregnaba la cripta no procedía de ningún cadáver identificable."',
+    freq: 'Media' }
+];
+
+const READING_GUIDE = {
+  intro: 'El horror cósmico es un género con una obra fundacional compacta y muy accesible. La barrera de entrada real no es la dificultad sino saber por dónde empezar. Estas tres rutas están diseñadas para lectores en distintos puntos de su recorrido.',
+  routes: [
+    {
+      id: 'rg1',
+      level: 'Principiante',
+      icon: '◎',
+      title: 'Primera inmersión',
+      subtitle: 'Para quien nunca ha leído horror cósmico',
+      desc: 'Relatos cortos, alta densidad de ideas, impacto inmediato. Empieza por lo más accesible y construye hacia lo más complejo.',
+      time: '~10 horas de lectura total',
+      steps: [
+        { order: 1, title: 'La música de Erich Zann', author: 'H.P. Lovecraft (1922)', time: '20 min', why: 'El punto de entrada perfecto. Corto, climático, el horror como algo que se escucha antes de verse. Lee el texto completo en la sección Relato de este grimorio.' },
+        { order: 2, title: 'El sauce', author: 'Algernon Blackwood (1907)', time: '1h', why: 'El mejor relato de horror atmosférico según el propio Lovecraft. La naturaleza como presencia hostil e indiferente. Sin monstruos, sin sangre: solo incomodidad geométrica que escala.' },
+        { order: 3, title: 'La llamada de Cthulhu', author: 'H.P. Lovecraft (1928)', time: '1.5h', why: 'El texto que codificó el Mito. Estructurado en tres partes, empieza como investigación académica y termina como delirio. Aquí está todo: R\'lyeh, los cultistas, la indiferencia cósmica.' },
+        { order: 4, title: 'El horror de Dunwich', author: 'H.P. Lovecraft (1929)', time: '1.5h', why: 'Más narrativo que La llamada. Una trama con estructura clásica de monstruo y resolución, pero el monstruo no es vencible de la manera habitual. Introducción a Yog-Sothoth.' },
+        { order: 5, title: 'El Rey de Amarillo (colección)', author: 'Robert W. Chambers (1895)', time: '3h', why: 'Los cuatro primeros relatos de la colección definen el horror indirecto: la obra de teatro que enloquece sin que la leamos nosotros tampoco. Diferente a Lovecraft, igualmente esencial.' }
+      ]
+    },
+    {
+      id: 'rg2',
+      level: 'Intermedio',
+      icon: '◑',
+      title: 'Profundización',
+      subtitle: 'Para quien ya conoce a Lovecraft',
+      desc: 'El género más allá del Mito principal. Sus contemporáneos, sus predecesores, las obras que influenciaron a Lovecraft y que muchos lectores nunca leen.',
+      time: '~25 horas de lectura total',
+      steps: [
+        { order: 1, title: 'El gran dios Pan', author: 'Arthur Machen (1894)', time: '1.5h', why: 'Lo sobrenatural como algo que ya estaba aquí antes que nosotros. Machen influyó directamente en Lovecraft. El horror no llega de fuera: emerge de lo que la realidad esconde.' },
+        { order: 2, title: 'La casa en el límite del mundo', author: 'W.H. Hodgson (1908)', time: '4h', why: 'Un hombre contempla el fin del universo desde su propia casa. La visión cósmica más ambiciosa de la era pre-Lovecraft. El tiempo como vector de horror.' },
+        { order: 3, title: 'En las montañas de la locura', author: 'H.P. Lovecraft (1931)', time: '3.5h', why: 'La obra más larga de Lovecraft. Una expedición antártica descubre los restos de los Primigenios. El horror aquí es arqueológico: lo que encontramos en el pasado del planeta.' },
+        { order: 4, title: 'El pueblo blanco', author: 'Arthur Machen (1904)', time: '1h', why: 'Un diario encontrado. Una niña describe rituales que no entiende pero que el lector comprende. El horror como inocencia que no reconoce lo que ve.' },
+        { order: 5, title: 'Los dioses de Pegāna', author: 'Lord Dunsany (1905)', time: '2h', why: 'Una cosmogonía inventada completa. Los dioses que crea Dunsany son indiferentes e irracionales. Más poesía que terror, pero el cosmicismo encarnado en mito propio.' },
+        { order: 6, title: 'La sombra sobre Innsmouth', author: 'H.P. Lovecraft (1936)', time: '2h', why: 'El horror de linaje. Lo que el protagonista descubre sobre el pueblo resulta ser lo que va a descubrir sobre sí mismo. El mejor final de Lovecraft.' }
+      ]
+    },
+    {
+      id: 'rg3',
+      level: 'Avanzado',
+      icon: '●',
+      title: 'Expansión contemporánea',
+      subtitle: 'Para leer el género más allá de sus fundadores',
+      desc: 'El weird fiction del siglo XXI, los autores que reimaginan el horror cósmico y la teoría crítica del género.',
+      time: '~40 horas de lectura total',
+      steps: [
+        { order: 1, title: 'El Horror Sobrenatural en Literatura', author: 'H.P. Lovecraft (1927)', time: '3h', why: 'El manifiesto teórico del género escrito por su arquitecto. Ensayo crítico que repasa la historia del horror y define qué es el miedo literario genuino. Dominio público. Lectura imprescindible.' },
+        { order: 2, title: 'Annihilation (trilogía Southern Reach)', author: 'Jeff VanderMeer (2014)', time: '6h', why: 'El weird fiction contemporáneo más premiado. El horror cósmico sin mitología explícita: lo que hay en la Zona X no tiene nombre porque no puede tenerlo. La ininteligibilidad como mecánica narrativa.' },
+        { order: 3, title: 'Teatro Grottesco', author: 'Thomas Ligotti (2006)', time: '4h', why: 'La voz más oscura del horror cósmico contemporáneo. Ligotti no tiene monstruos: tiene atmósferas de una perturbación absoluta. Más filosófico que Lovecraft, más pesimista todavía.' },
+        { order: 4, title: 'Songs of a Dead Dreamer', author: 'Thomas Ligotti (1985)', time: '3h', why: 'Su primera colección. El horror de Ligotti en estado más narrativo. Las pesadillas tienen lógica interna pero es una lógica que viola la causalidad.' },
+        { order: 5, title: 'The Weird: A Compendium', author: 'Ann & Jeff VanderMeer (eds., 2012)', time: '∞', why: 'Antología de 1.200 páginas del weird fiction de todo el siglo XX. No se lee de corrido: se consulta. La mejor cartografía del género en su amplitud global.' },
+        { order: 6, title: 'Lovecraft: A Look Behind the Cthulhu Mythos', author: 'Lin Carter (1972)', time: '3h', why: 'Historia y análisis del Mito de Cthulhu. Cómo Lovecraft construyó el universo compartido, cómo sus amigos lo expandieron y qué quedó después de su muerte. Contexto crítico esencial.' }
+      ]
+    }
+  ]
+};
+
+const RPG_SYSTEMS = [
+  {
+    id: 'rs1',
+    name: 'Call of Cthulhu',
+    edition: '7ª edición (2014)',
+    publisher: 'Chaosium',
+    since: 1981,
+    system: 'BRP (Basic Role-Playing) — D100 por debajo de habilidad',
+    sanity: 'Sistema central. Puntos de Cordura que se pierden al ver lo innombrable. Pérdida temporal vs. permanente. Trastornos concretos.',
+    tone: 'Investigación clásica. Los personajes son frágiles. La supervivencia es improbable; la cordura, aún más.',
+    complexity: '★★★☆☆',
+    best_for: 'Grupos nuevos en el género. Partidas de investigación tipo noir. Una sesión o una campaña corta.',
+    not_for: 'Quienes quieran personajes heroicos o combate satisfactorio.',
+    key_mechanic: 'Tirada de Cordura: ver algo sobrenatural exige una tirada. Si fallas, pierdes Cordura. Si llegas a 0, la locura es permanente.',
+    famous_campaigns: 'La Máscara de Nyarlathotep, Horrible Navidad de 1923, Horror en Dunwich',
+    note: 'El referente absoluto. Todo lo demás se mide contra él. Si juegas horror cósmico, empiezas aquí.'
+  },
+  {
+    id: 'rs2',
+    name: 'Delta Green',
+    edition: '2ª edición (2016)',
+    publisher: 'Arc Dream Publishing',
+    since: 1997,
+    system: 'BRP modificado — similar a CoC pero con mecánicas de agencia gubernamental',
+    sanity: 'Sistema de Cordura más granular. Añade Traumas (temporales) y Trastornos (permanentes). Los vínculos personales protegen la cordura pero pueden usarse en tu contra.',
+    tone: 'Horror moderno. Agentes gubernamentales encubriendo lo innombrable. Conspirativo, paranoico, con coste personal muy alto.',
+    complexity: '★★★★☆',
+    best_for: 'Grupos con experiencia en CoC que quieren más profundidad mecánica. Campañas largas. Tono de thriller de espionaje oscuro.',
+    not_for: 'Primeros contactos con el género. Requiere conocimiento previo del Mito.',
+    key_mechanic: 'Vínculos: tu familia, tu pareja, tu mejor amigo. Son mecánicas: te protegen de la locura pero el Mito puede usarlos contra ti.',
+    famous_campaigns: 'Impossible Landscapes, Observer Effect',
+    note: 'El Call of Cthulhu del siglo XXI. Si quieres el horror lovecraftiano en contexto moderno-gubernamental, Delta Green es superior.'
+  },
+  {
+    id: 'rs3',
+    name: 'Trail of Cthulhu',
+    edition: '1ª edición (2007)',
+    publisher: 'Pelgrane Press',
+    since: 2007,
+    system: 'GUMSHOE — las pistas se encuentran automáticamente; el drama está en qué hacer con ellas',
+    sanity: 'Dos recursos: Estabilidad (corto plazo, recuperable) y Cordura (permanente, no recuperable). El sistema distingue entre "asustado" y "roto".',
+    tone: 'Investigación garantizada. El sistema elimina la frustración de perder pistas por mala tirada. Dos modos: Pulp (acción) o Purist (horror real).',
+    complexity: '★★★☆☆',
+    best_for: 'Directores que quieren asegurarse de que la investigación avanza. Modo Purista para el horror cósmico más desolador.',
+    not_for: 'Puristas del dado. El diseño filosófico elimina el fracaso en pistas de investigación.',
+    key_mechanic: 'GUMSHOE: si tienes la habilidad relevante, encuentras la pista. El juego es sobre las consecuencias, no sobre si las encuentras.',
+    famous_campaigns: 'Eternal Lies, The Armitage Files',
+    note: 'La alternativa más elegante a CoC. El director de juego frustrado con los jugadores que fallan tiradas de Detectar está en su público objetivo.'
+  },
+  {
+    id: 'rs4',
+    name: 'Mothership',
+    edition: '1ª edición (2022)',
+    publisher: 'Tuesday Knight Games',
+    since: 2017,
+    system: 'D100 simplificado. Cuatro atributos. Sistema de pánico con tabla de resultados.',
+    sanity: 'Sistema de Estrés y Pánico. El Estrés se acumula y cuando tiras en situación de peligro con estrés alto, el resultado de la tabla puede ser impredecible.',
+    tone: 'Ciencia ficción de horror cósmico. Los jugadores son tripulantes o marines, no investigadores. La supervivencia como objetivo, la comprensión como lujo.',
+    complexity: '★★☆☆☆',
+    best_for: 'Una sola sesión intensa. Grupos que quieren el horror cósmico en entorno de ciencia ficción. Jugadores nuevos en el rol.',
+    not_for: 'Campañas largas. Quien quiera investigación detallada de Mito.',
+    key_mechanic: 'Tabla de Pánico: cuando el sistema activa el pánico, tiras en una tabla. Los resultados van desde "temblor de manos" hasta "corre en dirección aleatoria gritando".',
+    famous_campaigns: 'Pound of Flesh, A Pound of Flesh (módulo icónico)',
+    note: 'El indie hit del horror cósmico moderno. Diseño elegante en cuatro páginas (edición zine). Perfecto para introducir jugadores al género.'
+  },
+  {
+    id: 'rs5',
+    name: 'Cthulhu Hack',
+    edition: '2ª edición (2019)',
+    publisher: 'Just Crunch Games',
+    since: 2016,
+    system: 'OSR basado en The Black Hack — dados de uso para recursos',
+    sanity: 'Dados de Cordura y de Acierto que se degradan con el uso. Cuando un dado de Cordura llega a 0, el personaje experimenta "Lo Que Queda".',
+    tone: 'Rápido, mortal, old-school. Las sesiones son cortas y violentas. La investigación es táctica, no procesal.',
+    complexity: '★★☆☆☆',
+    best_for: 'Una sola sesión. Directores con poco tiempo de preparación. El sabor de CoC con mecánicas OSR.',
+    not_for: 'Campañas largas. Quien quiera simulación detallada del Mito.',
+    key_mechanic: 'Dados de uso: los recursos (Cordura, Vida) son dados que pueden mejorar o empeorar con cada uso. La degradación es visual.',
+    famous_campaigns: 'Múltiples módulos para una sesión publicados por la comunidad OSR',
+    note: 'La opción más rápida de poner en la mesa. Si tienes dos horas y cuatro jugadores, Cthulhu Hack funciona sin preparación extensa.'
+  }
+];
+
+const ILLUSTRATORS = [
+  {
+    id: 'il1',
+    name: 'Virgil Finlay',
+    dates: '1914 – 1971',
+    nationality: 'Estadounidense',
+    medium: 'Tinta — punteado y línea',
+    context: 'Ilustrador principal de Weird Tales durante los años 30-40. Sus ilustraciones acompañaron directamente relatos de Lovecraft, Howard y Clark Ashton Smith en sus publicaciones originales. Desarrolló una técnica de punteado (stippling) de extraordinaria densidad que producía texturas imposibles de clasificar.',
+    style: 'Figuras humanas de una fragilidad extrema frente a formas cósmicas que no caben en el encuadre. La escala humana siempre perdiendo contra algo más grande. Sus personajes femeninos, frecuentes en Weird Tales, tienen una belleza que convive incómodamente con el horror circundante.',
+    legacy: 'Sus ilustraciones son el referente visual de la era pulp del horror cósmico. Quien imagina visualmente los relatos de Weird Tales imagina, mayoritariamente, Finlay.',
+    findable: 'La mayoría de sus obras están en dominio público. Reproducciones en Internet Archive y en colecciones de Weird Tales digitalizadas.'
+  },
+  {
+    id: 'il2',
+    name: 'H.R. Giger',
+    dates: '1940 – 2014',
+    nationality: 'Suizo',
+    medium: 'Aerógrafo, acrílico, impresión',
+    context: 'Nunca ilustró a Lovecraft directamente. Pero su obra —la serie Necronomicon (1977), los diseños para Alien (1979)— es la traducción visual más influyente del horror cósmico lovecraftiano al arte contemporáneo. Su estética biomecánica —cuerpos que se fusionan con máquinas, sexualidad que produce horror, formas que no respetan la distinción orgánico/inorgánico— es exactamente lo que Lovecraft describía como "imposible de clasificar".',
+    style: 'Biomecánico: la fusión de carne y metal como estado natural de lo alienígena. Escala monumental que produce una sensación de aplastamiento. Formas que no terminan nunca, que se extienden fuera del cuadro.',
+    legacy: 'Alien (1979) es la mayor adaptación del horror lovecraftiano al cine, aunque no adapte a Lovecraft. El Xenomorfo es la criatura del Mito perfecta: sin psicología humana, sin motivación comprensible, de morfología que viola las categorías biológicas conocidas.',
+    findable: 'Derechos de autor activos. Ver reproducciones en museos y colecciones autorizadas. El Museo HR Giger en Gruyères, Suiza.'
+  },
+  {
+    id: 'il3',
+    name: 'Zdzisław Beksiński',
+    dates: '1929 – 2005',
+    nationality: 'Polaco',
+    medium: 'Óleo, fotografía, arte digital',
+    context: 'Pintor polaco que nunca leyó a Lovecraft —al menos no declaradamente— pero cuya obra es la representación visual más precisa del horror cósmico como estado del ser. Sus pinturas muestran mundos post-apocalípticos de una soledad monumental, figuras sin rostro en arquitecturas que no pueden sostenerse, carne que se deshace y se recompone.',
+    style: 'Pesadilla metodológica: cada elemento de sus pinturas viola una ley de la realidad de forma diferente. Los colores son los incorrectos para las formas. Las formas son las incorrectas para los espacios. Los espacios no tienen horizonte. El resultado es lo que la mente humana produce cuando intenta representar lo que no puede existir.',
+    legacy: 'Murió asesinado en su apartamento de Varsovia. Su obra se usa con frecuencia en comunidades online de horror cósmico como el equivalente visual canónico.',
+    findable: 'Reproducciones extensas online. Museo Nacional en Sanok, Polonia. Varias colecciones privadas.'
+  },
+  {
+    id: 'il4',
+    name: 'François Baranger',
+    dates: '1970 – presente',
+    nationality: 'Francés',
+    medium: 'Arte digital, concept art',
+    context: 'Artista de concepto para cine (Alien: Covenant, entre otros) que publicó una ilustración completa de las obras de Lovecraft en dos volúmenes para la editorial Bragelonne (2015-2017). Sus ilustraciones son el referente visual contemporáneo más ambicioso del Mito: cientos de páginas de arquitecturas, entidades y escenas directamente basadas en los textos.',
+    style: 'Realismo fotográfico con escala deliberadamente aplastante. Sus Grandes Antiguos tienen el tamaño que les corresponde: tan grandes que la figura humana en el encuadre es un detalle, no un protagonista. Sus arquitecturas son ciclópeas en el sentido literal: estructuras que ninguna tecnología humana podría construir.',
+    legacy: 'La mejor ilustración contemporánea de Lovecraft disponible en forma de libro. Sus Cthulhu y Azathoth son las referencias visuales que más gente cita cuando imagina las entidades del Mito.',
+    findable: 'Los libros de Bragelonne están en catálogo. Su portfolio en Artstation es público.'
+  },
+  {
+    id: 'il5',
+    name: 'Bernie Wrightson',
+    dates: '1948 – 2017',
+    nationality: 'Estadounidense',
+    medium: 'Tinta — línea detallada',
+    context: 'Co-creador de Swamp Thing, ilustrador de la edición de Frankenstein de Stephen King (1983), uno de los grandes del horror en cómic. Sus ilustraciones para Edgar Allan Poe y para antologías de horror de los 70-80 son el puente visual entre el horror clásico y el horror cósmico contemporáneo.',
+    style: 'Línea de una densidad extraordinaria que construye textura a través de la acumulación de trazos. Sus criaturas tienen peso físico: se sienten en la página. Sus composiciones privilegian el contraste entre la fragilidad humana y la monumentalidad de lo sobrenatural.',
+    legacy: 'Una de las influencias más citadas en los ilustradores de horror de la siguiente generación. Su edición de Frankenstein es considerada el mejor libro ilustrado de horror del siglo XX.',
+    findable: 'Algunas obras en dominio público (las más antiguas). La edición de Frankenstein está en catálogo (Plume, con texto de Stephen King).'
+  },
+  {
+    id: 'il6',
+    name: 'Lee Brown Coye',
+    dates: '1907 – 1981',
+    nationality: 'Estadounidense',
+    medium: 'Tinta — expresionismo rough',
+    context: 'Ilustrador de Weird Tales y Arkham House. Sus ilustraciones para las primeras ediciones de Arkham House —los libros que preservaron a Lovecraft— definieron visualmente la obra del autor para generaciones de lectores. Desarrolló un estilo expresionista y deliberadamente inacabado que producía una incomodidad visual diferente al detalle de Finlay.',
+    style: 'Líneas que no terminan donde deberían. Figuras que parecen disolvirse en el trazado. La imprecisión como decisión: lo que no se define completamente resulta más perturbador que lo que se muestra. Sus ilustraciones son los sueños febriles que tienen los personajes de Lovecraft.',
+    legacy: 'Las cubiertas e ilustraciones interiores de las primeras ediciones de Arkham House. El aspecto visual que muchos asocian con los primeros libros del Mito.',
+    findable: 'Muchas obras en dominio público. Reproducciones en Internet Archive junto a las ediciones digitalizadas de Weird Tales.'
+  }
+];
+
+const EXTERNAL_RESOURCES = {
+  podcasts: [
+    { name: 'The H.P. Lovecraft Literary Podcast', lang: 'Inglés', desc: 'El más exhaustivo. Episodio por episodio de toda la obra de Lovecraft, con análisis histórico y literario. Más de 200 episodios. Disponible en todas las plataformas.', url: 'hppodcraft.com', free: true },
+    { name: 'Miskatonic University Podcast', lang: 'Inglés', desc: 'Enfocado en el juego de rol Call of Cthulhu. Aventuras de juego, entrevistas con diseñadores, análisis de suplementos. Para quien llegue al género por el lado del rol.', url: 'miskatonicuniversitypodcast.com', free: true },
+    { name: 'The Good Friends of Jackson Elias', lang: 'Inglés', desc: 'Horror cósmico en su sentido más amplio: literatura, cine, juegos de rol. Conversaciones largas y detalladas entre tres aficionados veteranos.', url: 'Disponible en plataformas de podcast', free: true },
+    { name: 'Podcast sobre Lovecraft (varios)', lang: 'Español', desc: 'Buscar "Lovecraft podcast" en español devuelve varios proyectos de distinta regularidad. Ivoox y Spotify tienen el mayor volumen. Calidad variable; buscar los que tienen más episodios y reseñas.', url: 'Ivoox / Spotify', free: true }
+  ],
+  youtube: [
+    { name: 'Lovecraft Investigations (BBC)', lang: 'Inglés', desc: 'Dramatización radiofónica de la BBC adaptada a YouTube. Tres series basadas en relatos de Lovecraft con producción de alta calidad. Gratuito en el canal oficial de BBC Sounds.', url: 'youtube.com/BBCSounds', free: true },
+    { name: 'Kaptain Kristian — Lovecraft', lang: 'Inglés', desc: 'Ensayo visual de alta producción sobre Lovecraft y el horror cósmico. El mejor punto de entrada en vídeo para quien prefiere el formato ensayístico.', url: 'YouTube: Kaptain Kristian', free: true },
+    { name: 'Cine de Terror Clásico (varios canales ES)', lang: 'Español', desc: 'Varios canales españoles cubren las adaptaciones cinematográficas del género con análisis de calidad variable. Buscar "horror cósmico análisis" en YouTube en español.', url: 'YouTube', free: true }
+  ],
+  communities: [
+    { name: 'r/Lovecraft', lang: 'Inglés principalmente', desc: 'La comunidad más activa. Discusiones, arte, preguntas. Más de 100.000 miembros. Moderación estricta sobre contenido de calidad.', url: 'reddit.com/r/Lovecraft', free: true },
+    { name: 'r/CosmicHorror', lang: 'Inglés', desc: 'Horror cósmico más allá de Lovecraft. Recomendaciones de libros, películas, música. La alternativa para quien ya conoce a Lovecraft y quiere expandirse.', url: 'reddit.com/r/CosmicHorror', free: true },
+    { name: 'La Biblioteca de los Grandes Antiguos (Facebook)', lang: 'Español', desc: 'Comunidad hispanohablante de horror cósmico en Facebook. Punto de encuentro para lectores en español del género.', url: 'Facebook', free: true }
+  ],
+  publishers: [
+    { name: 'Valdemar', lang: 'Español', desc: 'La editorial española que más Lovecraft y horror clásico ha publicado. Sus colecciones "Gótica" y "Insomnia" son el punto de partida para el horror en español.', url: 'valdemar.es', free: false },
+    { name: 'Minotauro', lang: 'Español', desc: 'Editorial histórica española de ciencia ficción y fantasía que publica horror cósmico. Las ediciones de Lovecraft de Minotauro tienen traducciones canónicas en español.', url: 'minotauro.net', free: false },
+    { name: 'Arkham House', lang: 'Inglés', desc: 'La editorial fundada en 1939 para preservar a Lovecraft. Sus ediciones originales son objetos de coleccionista. Las reimpresiones siguen en catálogo. El origen de todo.', url: 'arkhamhouse.com', free: false },
+    { name: 'Chaosium', lang: 'Inglés/Español', desc: 'Editorial de juegos de rol fundadora de Call of Cthulhu. Sus suplementos y campañas son también literatura del Mito en forma funcional.', url: 'chaosium.com', free: false }
+  ],
+  texts_online: [
+    { name: 'Project Gutenberg — Lovecraft', lang: 'Inglés', desc: 'La obra completa de Lovecraft en texto plano gratuito. Todo en dominio público, descargable en múltiples formatos.', url: 'gutenberg.org', free: true },
+    { name: 'The H.P. Lovecraft Archive', lang: 'Inglés', desc: 'Archivo web con todos los textos, cartas conocidas y bibliografía secundaria. El recurso académico de referencia en inglés.', url: 'hplovecraft.com', free: true },
+    { name: 'Wikisource — Ambrose Bierce', lang: 'Inglés', desc: 'Obra completa de Bierce incluyendo Un habitante de Carcosa y el Diccionario del Diablo. Dominio público, texto revisado.', url: 'wikisource.org', free: true }
+  ]
+};
+
 // Generador de nombres
 const NAME_PARTS = {
   prefixes: ['Ors', 'Vel', 'Kath', 'Nun', 'Dru', 'Ael', 'Vor', 'Meth', 'Urn', 'Cael', 'Thu', 'Yar', 'Esh', 'Nul', 'Zar', 'Omn', 'Vedh', 'Tal', 'Res', 'Bhal'],
@@ -1257,11 +1577,6 @@ const PUBLIC_DOMAIN_PASSAGES = [
   }
 ];
 
-/* ─────────────────────────────────────────────────────────────────
-   2. ESTADO DE LA APLICACIÓN
-   FIX CRITICAL-2: localStorage con try-catch completo.
-   FIX LOW-13: State.save() protegido contra QuotaExceededError.
-   ───────────────────────────────────────────────────────────────── */
 
 function safeParse(key, fallback) {
   try {
@@ -1281,6 +1596,11 @@ const State = {
   unlockedNotes: safeParse('necro_notes', []),
   mode: safeParse('necro_mode', 'dark') === 'parchment' ? 'parchment' : 'dark',
   eggCount: Math.max(0, parseInt(safeParse('necro_eggs', '0'), 10) || 0),
+  userNotes: safeParse('necro_usernotes', {}),     // { entryId: 'texto de nota' }
+  readHistory: safeParse('necro_history', []),      // ['g1','b3','c2'…] visitadas
+  readWorks: safeParse('necro_readworks', {}),      // { 'a1-0': true } autor-obra leída
+  fontSize: Math.max(14, Math.min(28, parseInt(safeParse('necro_fontsize', '18'), 10) || 18)),
+  focusMode: false,
 
   save() {
     try {
@@ -1288,8 +1608,19 @@ const State = {
       localStorage.setItem('necro_notes', JSON.stringify(this.unlockedNotes));
       localStorage.setItem('necro_mode', this.mode);
       localStorage.setItem('necro_eggs', String(this.eggCount));
+      localStorage.setItem('necro_usernotes', JSON.stringify(this.userNotes));
+      localStorage.setItem('necro_history', JSON.stringify(this.readHistory.slice(-100)));
+      localStorage.setItem('necro_readworks', JSON.stringify(this.readWorks));
+      localStorage.setItem('necro_fontsize', String(this.fontSize));
     } catch {
       // QuotaExceededError o localStorage bloqueado — continuar sin persistencia
+    }
+  },
+
+  trackVisit(id) {
+    if (!this.readHistory.includes(id)) {
+      this.readHistory.push(id);
+      this.save();
     }
   }
 };
@@ -1347,6 +1678,12 @@ function navigate(pageId, chapterIdx) {
   if (pageId === 'adaptations') renderAdaptations();
   if (pageId === 'trivia') initTrivia();
   if (pageId === 'rpg') renderRPG();
+  if (pageId === 'reading-guide') renderReadingGuide();
+  if (pageId === 'lexicon') renderLexicon();
+  if (pageId === 'rpg-systems') renderRPGSystems();
+  if (pageId === 'illustrators') renderIllustrators();
+  if (pageId === 'resources') renderResources();
+  if (pageId === 'story') renderStory();
 
   // Ocultar menú móvil
   closeMobileMenu();
@@ -1624,6 +1961,7 @@ function renderGlossary() {
     card.addEventListener('click', () => openModal({
       eyebrow: typeLabels[entry.type],
       title: entry.name,
+      entryId: entry.id,
       body: `
         <p>${entry.full}</p>
         ${entry.tags ? `<p style="margin-top:1rem;font-family:var(--font-mono);font-size:0.7rem;color:var(--text-dim);">${entry.tags.map(t => `[${t}]`).join(' ')}</p>` : ''}
@@ -1921,6 +2259,7 @@ function renderBestiary() {
     entry.addEventListener('click', () => openModal({
       eyebrow: creature.class,
       title: creature.name,
+      entryId: creature.id,
       body: `
         <p style="font-style:italic;color:var(--text-dim);margin-bottom:1rem;">${creature.aka}</p>
         <p>${creature.desc}</p>
@@ -2081,10 +2420,26 @@ function globalSearch(term) {
    12. MODAL
    ───────────────────────────────────────────────────────────────── */
 
-function openModal({ eyebrow, title, body }) {
+function openModal({ eyebrow, title, body, entryId }) {
   document.getElementById('modal-eyebrow').textContent = eyebrow || '';
   document.getElementById('modal-title').textContent = title;
-  document.getElementById('modal-body').innerHTML = body;
+  const modalBody = document.getElementById('modal-body');
+  modalBody.innerHTML = body;
+
+  // Añadir botón compartir
+  const shareBtn = document.createElement('button');
+  shareBtn.className = 'btn-passage';
+  shareBtn.style.marginTop = 'var(--sp-lg)';
+  shareBtn.textContent = '↗ Compartir esta entrada';
+  shareBtn.addEventListener('click', () => shareEntry(title, modalBody.innerText.replace(shareBtn.textContent, '').trim()));
+  modalBody.appendChild(shareBtn);
+
+  // Añadir widget de nota si hay entryId
+  if (entryId) {
+    State.trackVisit(entryId);
+    renderNoteWidget(entryId, modalBody);
+  }
+
   const overlay = document.getElementById('modal-overlay');
   overlay.removeAttribute('hidden');
   document.getElementById('modal-close').focus();
@@ -2557,6 +2912,415 @@ function openRandomEntry() {
   ];
   const entry = pool[Math.floor(Math.random() * pool.length)];
   openModal(entry);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   4b. NAV DESPLEGABLE — menús de grupo
+   ───────────────────────────────────────────────────────────────── */
+
+document.querySelectorAll('.nav-group-toggle').forEach(toggle => {
+  toggle.addEventListener('click', e => {
+    e.stopPropagation();
+    const group = toggle.closest('.nav-group');
+    const dropdown = group.querySelector('.nav-dropdown');
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+    // Cerrar todos los demás
+    document.querySelectorAll('.nav-group-toggle').forEach(t => {
+      if (t !== toggle) {
+        t.setAttribute('aria-expanded', 'false');
+        const d = t.closest('.nav-group').querySelector('.nav-dropdown');
+        if (d) d.hidden = true;
+      }
+    });
+
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    dropdown.hidden = isOpen;
+  });
+});
+
+// Cerrar dropdowns al hacer clic fuera
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-group-toggle').forEach(t => {
+    t.setAttribute('aria-expanded', 'false');
+    const d = t.closest('.nav-group').querySelector('.nav-dropdown');
+    if (d) d.hidden = true;
+  });
+});
+
+// Cerrar dropdowns en navegación
+const _origNavigate = navigate;
+
+/* ─────────────────────────────────────────────────────────────────
+   9i. GUÍA DE LECTURA
+   ───────────────────────────────────────────────────────────────── */
+
+function renderReadingGuide() {
+  const container = document.getElementById('reading-guide-container');
+  if (!container || container.children.length > 0) return;
+
+  const intro = document.createElement('p');
+  intro.className = 'section-lead';
+  intro.style.marginBottom = 'var(--sp-xl)';
+  intro.textContent = READING_GUIDE.intro;
+  container.appendChild(intro);
+
+  READING_GUIDE.routes.forEach(route => {
+    const section = document.createElement('div');
+    section.className = 'rg-route';
+    section.innerHTML = `
+      <div class="rg-route-header">
+        <span class="rg-icon">${route.icon}</span>
+        <div>
+          <span class="rg-level">${route.level}</span>
+          <h3 class="rg-title">${route.title}</h3>
+          <p class="rg-subtitle">${route.subtitle}</p>
+        </div>
+        <span class="rg-time">${route.time}</span>
+      </div>
+      <p class="rg-desc">${route.desc}</p>
+    `;
+
+    const list = document.createElement('ol');
+    list.className = 'rg-steps';
+    route.steps.forEach(step => {
+      const li = document.createElement('li');
+      li.className = 'rg-step';
+      li.innerHTML = `
+        <div class="rg-step-header">
+          <span class="rg-step-num">${step.order}</span>
+          <div class="rg-step-info">
+            <strong class="rg-step-title">${step.title}</strong>
+            <span class="rg-step-author">${step.author}</span>
+          </div>
+          <span class="rg-step-time">${step.time}</span>
+        </div>
+        <p class="rg-step-why">${step.why}</p>
+      `;
+      // Si es La música de Erich Zann, enlazar al relato
+      if (step.title.includes('Erich Zann')) {
+        const link = document.createElement('button');
+        link.className = 'btn-passage';
+        link.style.marginTop = 'var(--sp-sm)';
+        link.textContent = '→ Leer en el grimorio';
+        link.addEventListener('click', () => navigate('story'));
+        li.appendChild(link);
+      }
+      list.appendChild(li);
+    });
+
+    section.appendChild(list);
+    container.appendChild(section);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9j. NEOLOGISMOS / LEXICON
+   ───────────────────────────────────────────────────────────────── */
+
+function renderLexicon() {
+  const grid = document.getElementById('lexicon-grid');
+  if (!grid) return;
+  if (grid.children.length > 0) return;
+  renderLexiconFiltered('');
+
+  const search = document.getElementById('lexicon-search');
+  if (search) search.addEventListener('input', e => renderLexiconFiltered(e.target.value.toLowerCase()));
+}
+
+function renderLexiconFiltered(term) {
+  const grid = document.getElementById('lexicon-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const filtered = NEOLOGISMS.filter(n =>
+    !term || n.term.toLowerCase().includes(term) || n.es.toLowerCase().includes(term) || n.def.toLowerCase().includes(term)
+  );
+  if (!filtered.length) {
+    grid.innerHTML = '<p style="color:var(--text-dim);font-style:italic;">Ningún término encontrado.</p>';
+    return;
+  }
+  filtered.forEach(n => {
+    const card = document.createElement('div');
+    card.className = 'lexicon-card';
+    card.setAttribute('tabindex', '0');
+    card.innerHTML = `
+      <p class="lexicon-freq">${n.freq}</p>
+      <h3 class="lexicon-term">${n.term}</h3>
+      <p class="lexicon-origin">${n.origin}</p>
+      <p class="lexicon-es">ES: <em>${n.es}</em></p>
+      <p class="lexicon-def">${n.def}</p>
+      <blockquote class="lexicon-usage">${n.usage}</blockquote>
+    `;
+    card.addEventListener('click', () => openModal({
+      eyebrow: n.origin + ' · ' + n.freq,
+      title: n.term,
+      body: `
+        <p style="color:var(--gold);font-style:italic;margin-bottom:0.5rem;">Español: ${n.es}</p>
+        <p>${n.def}</p>
+        <h4>Ejemplo de uso</h4>
+        <blockquote style="border-left:2px solid var(--accent);padding-left:1rem;font-style:italic;color:var(--text-dim);margin:0.5rem 0;">${n.usage}</blockquote>
+        <h4>Frecuencia en la obra de Lovecraft</h4>
+        <p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);">${n.freq}</p>
+      `
+    }));
+    card.addEventListener('keydown', e => e.key === 'Enter' && card.click());
+    grid.appendChild(card);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9k. SISTEMAS DE ROL
+   ───────────────────────────────────────────────────────────────── */
+
+function renderRPGSystems() {
+  const container = document.getElementById('rpg-systems-container');
+  if (!container || container.children.length > 0) return;
+
+  RPG_SYSTEMS.forEach(sys => {
+    const card = document.createElement('div');
+    card.className = 'rpgsys-card';
+    card.setAttribute('tabindex', '0');
+    card.innerHTML = `
+      <div class="rpgsys-header">
+        <div>
+          <h3 class="rpgsys-name">${sys.name}</h3>
+          <p class="rpgsys-pub">${sys.publisher} · Desde ${sys.since} · ${sys.edition}</p>
+        </div>
+        <div class="rpgsys-complexity" title="Complejidad">${sys.complexity}</div>
+      </div>
+      <p class="rpgsys-tone"><strong>Tono:</strong> ${sys.tone}</p>
+      <p class="rpgsys-best"><strong>Mejor para:</strong> ${sys.best_for}</p>
+      <p class="rpgsys-note">${sys.note}</p>
+    `;
+    card.addEventListener('click', () => openModal({
+      eyebrow: sys.publisher + ' · ' + sys.edition,
+      title: sys.name,
+      body: `
+        <div class="modal-stat-row"><span class="modal-stat-label">Sistema base</span><span class="modal-stat-value">${sys.system}</span></div>
+        <div class="modal-stat-row"><span class="modal-stat-label">Complejidad</span><span class="modal-stat-value">${sys.complexity}</span></div>
+        <h4>Sistema de cordura</h4><p>${sys.sanity}</p>
+        <h4>Tono</h4><p>${sys.tone}</p>
+        <h4>Mejor para</h4><p>${sys.best_for}</p>
+        <h4>No recomendado para</h4><p>${sys.not_for}</p>
+        <h4>Mecánica clave</h4><p style="font-style:italic;">${sys.key_mechanic}</p>
+        <h4>Campañas famosas</h4><p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);">${sys.famous_campaigns}</p>
+        <blockquote style="border-left:2px solid var(--gold-dim);padding-left:1rem;font-style:italic;color:var(--gold);margin-top:1rem;">${sys.note}</blockquote>
+      `
+    }));
+    card.addEventListener('keydown', e => e.key === 'Enter' && card.click());
+    container.appendChild(card);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9l. ILUSTRADORES
+   ───────────────────────────────────────────────────────────────── */
+
+function renderIllustrators() {
+  const grid = document.getElementById('illustrators-grid');
+  if (!grid || grid.children.length > 0) return;
+
+  ILLUSTRATORS.forEach(il => {
+    State.trackVisit(il.id);
+    const card = document.createElement('div');
+    card.className = 'illus-card';
+    card.setAttribute('tabindex', '0');
+    card.innerHTML = `
+      <p class="illus-dates">${il.dates} · ${il.nationality}</p>
+      <h3 class="illus-name">${il.name}</h3>
+      <p class="illus-medium">${il.medium}</p>
+      <p class="illus-context-short">${il.context.substring(0, 130)}…</p>
+    `;
+    card.addEventListener('click', () => openModal({
+      eyebrow: il.nationality + ' · ' + il.dates + ' · ' + il.medium,
+      title: il.name,
+      body: `
+        <h4>Contexto</h4><p>${il.context}</p>
+        <h4>Estilo</h4><p>${il.style}</p>
+        <h4>Legado</h4><p>${il.legacy}</p>
+        <h4>Dónde encontrar su obra</h4>
+        <p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--gold);">${il.findable}</p>
+      `
+    }));
+    card.addEventListener('keydown', e => e.key === 'Enter' && card.click());
+    grid.appendChild(card);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9m. RECURSOS EXTERNOS
+   ───────────────────────────────────────────────────────────────── */
+
+function renderResources() {
+  const container = document.getElementById('resources-container');
+  if (!container || container.children.length > 0) return;
+
+  const sections = [
+    { key: 'podcasts', title: '🎙 Podcasts', icon: '🎙' },
+    { key: 'youtube', title: '▶ YouTube', icon: '▶' },
+    { key: 'communities', title: '◉ Comunidades', icon: '◉' },
+    { key: 'publishers', title: '📚 Editoriales', icon: '📚' },
+    { key: 'texts_online', title: '◌ Textos en línea (dominio público)', icon: '◌' }
+  ];
+
+  sections.forEach(({ key, title }) => {
+    const items = EXTERNAL_RESOURCES[key];
+    if (!items?.length) return;
+    const sec = document.createElement('div');
+    sec.className = 'res-section';
+    sec.innerHTML = `<h3 class="res-type-title">${title}</h3>`;
+    const grid = document.createElement('div');
+    grid.className = 'res-grid';
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'res-card';
+      card.innerHTML = `
+        <div class="res-card-top">
+          <h4 class="res-name">${item.name}</h4>
+          ${item.free ? '<span class="res-free">Gratuito</span>' : ''}
+        </div>
+        <p class="res-lang">${item.lang}</p>
+        <p class="res-desc">${item.desc}</p>
+        <p class="res-url">${item.url}</p>
+      `;
+      grid.appendChild(card);
+    });
+    sec.appendChild(grid);
+    container.appendChild(sec);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9n. RELATO COMPLETO — La música de Erich Zann
+   ───────────────────────────────────────────────────────────────── */
+
+function renderStory() {
+  const body = document.getElementById('story-body');
+  if (!body || body.children.length > 0) return;
+
+  // Aplicar tamaño de fuente guardado
+  applyFontSize();
+
+  const story = STORY_ZANN;
+  story.paragraphs.forEach(p => {
+    if (p.section) {
+      const h = document.createElement('h3');
+      h.className = 'story-section-title';
+      h.textContent = p.section;
+      body.appendChild(h);
+    }
+    const el = document.createElement('p');
+    el.textContent = p.text;
+    body.appendChild(el);
+  });
+
+  State.trackVisit('story-zann');
+
+  // Controles de fuente
+  document.getElementById('font-decrease').addEventListener('click', () => {
+    State.fontSize = Math.max(14, State.fontSize - 1);
+    applyFontSize();
+    State.save();
+  });
+  document.getElementById('font-increase').addEventListener('click', () => {
+    State.fontSize = Math.min(28, State.fontSize + 1);
+    applyFontSize();
+    State.save();
+  });
+
+  // Modo foco
+  document.getElementById('focus-mode-btn').addEventListener('click', toggleFocusMode);
+
+  // Copiar
+  document.getElementById('story-copy').addEventListener('click', () => {
+    const text = story.paragraphs.map(p => (p.section ? '\n' + p.section + '\n\n' : '') + p.text).join('\n\n');
+    copyToClipboard(`${story.title}\n${story.author}\n\n${text}\n\n[${story.status}]`);
+  });
+
+  // Exportar
+  document.getElementById('story-export').addEventListener('click', () => {
+    const text = story.paragraphs.map(p => (p.section ? '\n' + p.section + '\n\n' : '') + p.text).join('\n\n');
+    exportTxt(`${story.title}\n${story.author}\n${'─'.repeat(50)}\n\n${text}\n\n[${story.status}]`, 'necro_erich_zann.txt');
+  });
+}
+
+function applyFontSize() {
+  const body = document.getElementById('story-body');
+  const label = document.getElementById('font-current');
+  if (body) body.style.fontSize = State.fontSize + 'px';
+  if (label) label.textContent = State.fontSize + 'px';
+}
+
+function toggleFocusMode() {
+  State.focusMode = !State.focusMode;
+  const storyPage = document.getElementById('page-story');
+  const btn = document.getElementById('focus-mode-btn');
+  if (storyPage) storyPage.classList.toggle('focus-mode', State.focusMode);
+  if (btn) btn.textContent = State.focusMode ? '⊞ Salir' : '⊡ Foco';
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9o. NOTAS DE USUARIO — guardar notas en glosario/bestiario
+   ───────────────────────────────────────────────────────────────── */
+
+function getUserNote(id) { return State.userNotes[id] || ''; }
+
+function saveUserNote(id, text) {
+  if (text.trim()) {
+    State.userNotes[id] = text.trim();
+  } else {
+    delete State.userNotes[id];
+  }
+  State.save();
+}
+
+function renderNoteWidget(id, containerEl) {
+  const existing = getUserNote(id);
+  const widget = document.createElement('div');
+  widget.className = 'note-widget';
+  widget.innerHTML = `
+    <p class="note-widget-label">✎ Tu nota</p>
+    <textarea class="note-textarea" placeholder="Escribe una nota personal sobre esta entrada…" rows="3">${existing}</textarea>
+    <div class="note-actions">
+      <button class="btn-passage note-save">Guardar nota</button>
+      ${existing ? '<button class="btn-passage note-delete">Borrar</button>' : ''}
+    </div>
+    ${existing ? '<p class="note-saved-label">Nota guardada</p>' : ''}
+  `;
+  const textarea = widget.querySelector('.note-textarea');
+  widget.querySelector('.note-save').addEventListener('click', () => {
+    saveUserNote(id, textarea.value);
+    showToast('Nota guardada');
+  });
+  const delBtn = widget.querySelector('.note-delete');
+  if (delBtn) delBtn.addEventListener('click', () => {
+    saveUserNote(id, '');
+    textarea.value = '';
+    showToast('Nota borrada');
+  });
+  containerEl.appendChild(widget);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9p. COMPARTIR ENTRADA — copiar texto formateado
+   ───────────────────────────────────────────────────────────────── */
+
+function shareEntry(title, content) {
+  const text = `NECRONOMICON 404 — ${title}\n\n${content}\n\nnecronomicon404.github.io`;
+  copyToClipboard(text);
+  showToast('Entrada copiada para compartir');
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   9q. HISTORIAL — últimas entradas visitadas
+   ───────────────────────────────────────────────────────────────── */
+
+function getEntryById(id) {
+  return GLOSSARY_ENTRIES.find(e => e.id === id) ||
+         BESTIARY.find(e => e.id === id) ||
+         COSMIC_AUTHORS.find(e => e.id === id) ||
+         null;
 }
 
 

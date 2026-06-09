@@ -31,41 +31,90 @@
         <span class="sigil-small" aria-hidden="true">✦</span>
         <span>NECRONOMICON 404</span>
       </button>
+
       <ul class="nav-links" role="list">
-        <li><button data-goto="index-page" class="nav-btn">Índice</button></li>
-        <li><button data-goto="glossary" class="nav-btn">Glosario</button></li>
-        <li><button data-goto="library" class="nav-btn">Biblioteca</button></li>
-        <li><button data-goto="authors" class="nav-btn">Autores</button></li>
-        <li><button data-goto="timeline" class="nav-btn">Cronología</button></li>
-        <li><button data-goto="adaptations" class="nav-btn">Adaptaciones</button></li>
-        <li><button data-goto="trivia" class="nav-btn">Trivia</button></li>
-        <li><button data-goto="rpg" class="nav-btn">Rol</button></li>
-        <li><button data-goto="generators" class="nav-btn">Generadores</button></li>
-        <li><button data-goto="archive" class="nav-btn">Archivo</button></li>
-        <li><button data-goto="bestiary" class="nav-btn">Bestiario</button></li>
+        <!-- Grimorio -->
+        <li class="nav-group">
+          <button class="nav-btn nav-group-toggle" aria-haspopup="true" aria-expanded="false">
+            Grimorio <span class="nav-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown" hidden role="menu">
+            <li><button data-goto="index-page" class="nav-btn" role="menuitem">Índice de capítulos</button></li>
+            <li><button data-goto="generators" class="nav-btn" role="menuitem">Generadores apócrifos</button></li>
+            <li><button data-goto="bestiary" class="nav-btn" role="menuitem">Bestiario del vacío</button></li>
+          </ul>
+        </li>
+        <!-- Referencia -->
+        <li class="nav-group">
+          <button class="nav-btn nav-group-toggle" aria-haspopup="true" aria-expanded="false">
+            Referencia <span class="nav-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown" hidden role="menu">
+            <li><button data-goto="glossary" class="nav-btn" role="menuitem">Glosario</button></li>
+            <li><button data-goto="library" class="nav-btn" role="menuitem">Biblioteca</button></li>
+            <li><button data-goto="authors" class="nav-btn" role="menuitem">Autores</button></li>
+            <li><button data-goto="timeline" class="nav-btn" role="menuitem">Cronología</button></li>
+            <li><button data-goto="lexicon" class="nav-btn" role="menuitem">Neologismos</button></li>
+            <li><button data-goto="reading-guide" class="nav-btn" role="menuitem">Guía de lectura</button></li>
+          </ul>
+        </li>
+        <!-- Herramientas -->
+        <li class="nav-group">
+          <button class="nav-btn nav-group-toggle" aria-haspopup="true" aria-expanded="false">
+            Herramientas <span class="nav-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown" hidden role="menu">
+            <li><button data-goto="trivia" class="nav-btn" role="menuitem">Trivia</button></li>
+            <li><button data-goto="rpg" class="nav-btn" role="menuitem">Escenarios de rol</button></li>
+            <li><button data-goto="rpg-systems" class="nav-btn" role="menuitem">Sistemas de rol</button></li>
+          </ul>
+        </li>
+        <!-- Explorar -->
+        <li class="nav-group">
+          <button class="nav-btn nav-group-toggle" aria-haspopup="true" aria-expanded="false">
+            Explorar <span class="nav-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown" hidden role="menu">
+            <li><button data-goto="adaptations" class="nav-btn" role="menuitem">Adaptaciones</button></li>
+            <li><button data-goto="illustrators" class="nav-btn" role="menuitem">Ilustradores</button></li>
+            <li><button data-goto="resources" class="nav-btn" role="menuitem">Recursos externos</button></li>
+            <li><button data-goto="archive" class="nav-btn" role="menuitem">Archivo</button></li>
+          </ul>
+        </li>
         <li>
           <button id="mode-toggle" class="nav-btn mode-btn" aria-label="Cambiar modo visual">
             <span id="mode-label">Pergamino</span>
           </button>
         </li>
       </ul>
+
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Menú móvil -->
+
+    <!-- Menú móvil: plano para simplicidad táctil -->
     <div class="nav-mobile" id="nav-mobile" hidden>
+      <p class="nav-mobile-group-label">Grimorio</p>
       <button data-goto="index-page" class="nav-btn">Índice</button>
+      <button data-goto="generators" class="nav-btn">Generadores</button>
+      <button data-goto="bestiary" class="nav-btn">Bestiario</button>
+      <p class="nav-mobile-group-label">Referencia</p>
       <button data-goto="glossary" class="nav-btn">Glosario</button>
       <button data-goto="library" class="nav-btn">Biblioteca</button>
       <button data-goto="authors" class="nav-btn">Autores</button>
       <button data-goto="timeline" class="nav-btn">Cronología</button>
-      <button data-goto="adaptations" class="nav-btn">Adaptaciones</button>
+      <button data-goto="lexicon" class="nav-btn">Neologismos</button>
+      <button data-goto="reading-guide" class="nav-btn">Guía de lectura</button>
+      <p class="nav-mobile-group-label">Herramientas</p>
       <button data-goto="trivia" class="nav-btn">Trivia</button>
-      <button data-goto="rpg" class="nav-btn">Rol</button>
-      <button data-goto="generators" class="nav-btn">Generadores</button>
+      <button data-goto="rpg" class="nav-btn">Escenarios de rol</button>
+      <button data-goto="rpg-systems" class="nav-btn">Sistemas de rol</button>
+      <p class="nav-mobile-group-label">Explorar</p>
+      <button data-goto="adaptations" class="nav-btn">Adaptaciones</button>
+      <button data-goto="illustrators" class="nav-btn">Ilustradores</button>
+      <button data-goto="resources" class="nav-btn">Recursos externos</button>
       <button data-goto="archive" class="nav-btn">Archivo</button>
-      <button data-goto="bestiary" class="nav-btn">Bestiario</button>
       <button id="mode-toggle-mobile" class="nav-btn">☽ Cambiar modo</button>
     </div>
   </nav>
@@ -385,6 +434,95 @@
         <button class="btn-generate" id="rpg-random-btn">⚄ Escenario aleatorio</button>
       </div>
       <div id="rpg-container" class="rpg-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ GUÍA DE LECTURA ════════════════════ -->
+  <section id="page-reading-guide" class="page" aria-label="Guía de lectura del horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Via Obscura</p>
+        <h2>Guía de Lectura</h2>
+        <p class="section-lead">Por dónde empezar, cómo continuar y a dónde llegar. Tres rutas por el género según tu punto de partida.</p>
+      </header>
+      <div id="reading-guide-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ NEOLOGISMOS ═════════════════════════ -->
+  <section id="page-lexicon" class="page" aria-label="Diccionario de neologismos lovecraftianos">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Lexicon Eldritch</p>
+        <h2>Diccionario de Neologismos</h2>
+        <p class="section-lead">Vocabulario inventado o redefinido por Lovecraft. Términos que el género adoptó y que no tienen equivalente exacto en ninguna otra tradición literaria.</p>
+      </header>
+      <div class="search-bar">
+        <label for="lexicon-search" class="sr-only">Buscar neologismo</label>
+        <input type="search" id="lexicon-search" placeholder="Buscar término…" autocomplete="off">
+      </div>
+      <div id="lexicon-grid" class="lexicon-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ SISTEMAS DE ROL ════════════════════ -->
+  <section id="page-rpg-systems" class="page" aria-label="Sistemas de juego de rol de horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Systema Ludicum</p>
+        <h2>Sistemas de Juego de Rol</h2>
+        <p class="section-lead">Comparativa de los principales sistemas para jugar horror cósmico. Cuál elegir según el grupo, el tono y la experiencia.</p>
+      </header>
+      <div id="rpg-systems-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ ILUSTRADORES ═══════════════════════ -->
+  <section id="page-illustrators" class="page" aria-label="Ilustradores del horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Pictores Abyssales</p>
+        <h2>Ilustradores del Género</h2>
+        <p class="section-lead">Los artistas que dieron forma visual al horror cósmico. Sin imágenes protegidas: solo descripción, estilo y contexto de su obra.</p>
+      </header>
+      <div id="illustrators-grid" class="illustrators-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ RECURSOS EXTERNOS ══════════════════ -->
+  <section id="page-resources" class="page" aria-label="Recursos externos sobre horror cósmico">
+    <div class="page-inner">
+      <header class="section-header">
+        <p class="section-eyebrow">Nexus Exterior</p>
+        <h2>Recursos Externos</h2>
+        <p class="section-lead">Podcasts, canales, comunidades y editoriales para continuar explorando el género fuera de este grimorio.</p>
+      </header>
+      <div id="resources-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ RELATO COMPLETO ════════════════════ -->
+  <section id="page-story" class="page" aria-label="Relato completo en dominio público">
+    <div class="page-inner story-layout">
+      <header class="section-header">
+        <p class="section-eyebrow">Textus Completus · Dominio Público</p>
+        <h2 id="story-title">La Música de Erich Zann</h2>
+        <p class="section-lead" id="story-meta">H.P. Lovecraft, 1922 · Dominio público · ~2.100 palabras</p>
+      </header>
+      <div class="story-controls">
+        <div class="font-size-control" role="group" aria-label="Tamaño de fuente">
+          <button class="font-btn" id="font-decrease" aria-label="Reducir fuente">A−</button>
+          <span class="font-current" id="font-current" aria-live="polite">18px</span>
+          <button class="font-btn" id="font-increase" aria-label="Aumentar fuente">A+</button>
+        </div>
+        <button class="focus-btn" id="focus-mode-btn" aria-label="Modo sin distracciones">⊡ Foco</button>
+        <button class="btn-passage" id="story-copy" aria-label="Copiar texto">⎘ Copiar</button>
+        <button class="btn-passage" id="story-export" aria-label="Exportar TXT">↓ TXT</button>
+      </div>
+      <article class="story-body" id="story-body">
+        <!-- Insertado por JS -->
+      </article>
+      <p class="story-footer">Texto en dominio público. Fuente: H.P. Lovecraft, The National Amateur, marzo 1922. Traducción castellana de referencia de dominio público.</p>
     </div>
   </section>
 
