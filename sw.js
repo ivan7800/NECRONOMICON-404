@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════════
-   NECRONOMICON 404 — sw.js  v2
+   NECRONOMICON 404 — sw.js  v4
    Service Worker — offline + cache estratégico
    ═══════════════════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'necronomicon-404-v3';
+const CACHE_VERSION = 'necronomicon-404-v7';
 
 // Assets locales que se pre-cachean en install
 const PRECACHE_ASSETS = [

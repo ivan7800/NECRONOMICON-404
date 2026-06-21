@@ -1582,9 +1582,28 @@ function safeParse(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
     if (raw === null) return fallback;
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    // Evita que datos corruptos cambien el tipo esperado y rompan la UI.
+    if (Array.isArray(fallback)) return Array.isArray(parsed) ? parsed : fallback;
+    if (fallback && typeof fallback === 'object') return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : fallback;
+    return parsed;
   } catch {
     // JSON inválido o localStorage no disponible (modo incógnito en algunos navegadores)
+    return fallback;
+  }
+}
+
+function safeString(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (raw === null) return fallback;
+    try {
+      const parsed = JSON.parse(raw);
+      return typeof parsed === 'string' ? parsed : String(parsed);
+    } catch {
+      return raw;
+    }
+  } catch {
     return fallback;
   }
 }
@@ -1594,7 +1613,7 @@ const State = {
   currentChapter: 0,
   favorites: safeParse('necro_favs', []),
   unlockedNotes: safeParse('necro_notes', []),
-  mode: safeParse('necro_mode', 'dark') === 'parchment' ? 'parchment' : 'dark',
+  mode: safeString('necro_mode', 'dark') === 'parchment' ? 'parchment' : 'dark',
   eggCount: Math.max(0, parseInt(safeParse('necro_eggs', '0'), 10) || 0),
   userNotes: safeParse('necro_usernotes', {}),     // { entryId: 'texto de nota' }
   readHistory: safeParse('necro_history', []),      // ['g1','b3','c2'…] visitadas
@@ -1606,7 +1625,7 @@ const State = {
     try {
       localStorage.setItem('necro_favs', JSON.stringify(this.favorites));
       localStorage.setItem('necro_notes', JSON.stringify(this.unlockedNotes));
-      localStorage.setItem('necro_mode', this.mode);
+      localStorage.setItem('necro_mode', JSON.stringify(this.mode));
       localStorage.setItem('necro_eggs', String(this.eggCount));
       localStorage.setItem('necro_usernotes', JSON.stringify(this.userNotes));
       localStorage.setItem('necro_history', JSON.stringify(this.readHistory.slice(-100)));
@@ -2381,8 +2400,6 @@ function globalSearch(term) {
     return;
   }
 
-  const re = new RegExp(`(${escapeRe(term)})`, 'gi');
-
   unique.slice(0, 20).forEach(result => {
     const el = document.createElement('div');
     el.className = 'search-result';
@@ -2395,11 +2412,7 @@ function globalSearch(term) {
 
     const snippetP = document.createElement('p');
     snippetP.className = 'search-result-text';
-    // Usar innerHTML sólo sobre snippet que viene de nuestros propios datos constantes,
-    // con el término de búsqueda del usuario escapado vía escapeRe antes del RegExp.
-    // El snippet es texto plano extraído de nuestros datos. El único riesgo es el término
-    // del usuario; lo mitigamos escapando el RegExp correctamente.
-    snippetP.innerHTML = `…${result.snippet.replace(re, '<mark>$1</mark>')}…`;
+    appendHighlightedText(snippetP, `…${result.snippet}…`, term);
 
     el.appendChild(originP);
     el.appendChild(snippetP);
@@ -2548,6 +2561,27 @@ function getSnippet(text, term, maxLen) {
 
 function escapeRe(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+
+function appendHighlightedText(parent, text, term) {
+  const source = String(text || '');
+  const safeTerm = String(term || '');
+  if (!safeTerm) {
+    parent.textContent = source;
+    return;
+  }
+  const re = new RegExp(`(${escapeRe(safeTerm)})`, 'gi');
+  let lastIndex = 0;
+  source.replace(re, (match, _group, offset) => {
+    if (offset > lastIndex) parent.appendChild(document.createTextNode(source.slice(lastIndex, offset)));
+    const mark = document.createElement('mark');
+    mark.textContent = match;
+    parent.appendChild(mark);
+    lastIndex = offset + match.length;
+    return match;
+  });
+  if (lastIndex < source.length) parent.appendChild(document.createTextNode(source.slice(lastIndex)));
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -3279,26 +3313,55 @@ function renderNoteWidget(id, containerEl) {
   const existing = getUserNote(id);
   const widget = document.createElement('div');
   widget.className = 'note-widget';
-  widget.innerHTML = `
-    <p class="note-widget-label">✎ Tu nota</p>
-    <textarea class="note-textarea" placeholder="Escribe una nota personal sobre esta entrada…" rows="3">${existing}</textarea>
-    <div class="note-actions">
-      <button class="btn-passage note-save">Guardar nota</button>
-      ${existing ? '<button class="btn-passage note-delete">Borrar</button>' : ''}
-    </div>
-    ${existing ? '<p class="note-saved-label">Nota guardada</p>' : ''}
-  `;
-  const textarea = widget.querySelector('.note-textarea');
-  widget.querySelector('.note-save').addEventListener('click', () => {
+
+  const label = document.createElement('p');
+  label.className = 'note-widget-label';
+  label.textContent = '✎ Tu nota';
+
+  const textarea = document.createElement('textarea');
+  textarea.className = 'note-textarea';
+  textarea.placeholder = 'Escribe una nota personal sobre esta entrada…';
+  textarea.rows = 3;
+  textarea.value = existing;
+
+  const actions = document.createElement('div');
+  actions.className = 'note-actions';
+
+  const saveBtn = document.createElement('button');
+  saveBtn.className = 'btn-passage note-save';
+  saveBtn.textContent = 'Guardar nota';
+  saveBtn.addEventListener('click', () => {
     saveUserNote(id, textarea.value);
     showToast('Nota guardada');
   });
-  const delBtn = widget.querySelector('.note-delete');
-  if (delBtn) delBtn.addEventListener('click', () => {
-    saveUserNote(id, '');
-    textarea.value = '';
-    showToast('Nota borrada');
-  });
+  actions.appendChild(saveBtn);
+
+  if (existing) {
+    const delBtn = document.createElement('button');
+    delBtn.className = 'btn-passage note-delete';
+    delBtn.textContent = 'Borrar';
+    delBtn.addEventListener('click', () => {
+      saveUserNote(id, '');
+      textarea.value = '';
+      delBtn.remove();
+      const savedLabel = widget.querySelector('.note-saved-label');
+      if (savedLabel) savedLabel.remove();
+      showToast('Nota borrada');
+    });
+    actions.appendChild(delBtn);
+  }
+
+  widget.appendChild(label);
+  widget.appendChild(textarea);
+  widget.appendChild(actions);
+
+  if (existing) {
+    const saved = document.createElement('p');
+    saved.className = 'note-saved-label';
+    saved.textContent = 'Nota guardada';
+    widget.appendChild(saved);
+  }
+
   containerEl.appendChild(widget);
 }
 

@@ -238,6 +238,12 @@ body {
   padding: var(--sp-sm) 0;
   font-size: 1rem;
 }
+.nav-mobile {
+  max-height: calc(100dvh - 54px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: calc(var(--sp-lg) + env(safe-area-inset-bottom));
+}
 
 @media (max-width: 1024px) {
   .nav-links { display: none; }
@@ -513,7 +519,7 @@ body {
    ═══════════════════════════════════════════════════════════════════ */
 .chapter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: var(--sp-lg);
 }
 
@@ -852,7 +858,7 @@ body {
 
 .glossary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: var(--sp-md);
 }
 
@@ -1199,7 +1205,7 @@ body {
 
 .archive-files {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   gap: var(--sp-md);
 }
 .archive-file {
@@ -1684,13 +1690,31 @@ body {
   html { font-size: 16px; }
   .page-inner { padding: var(--sp-lg) var(--sp-md); }
   .generators-grid { grid-template-columns: 1fr; }
+  .chapter-layout { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
   .chapter-toolbar {
     flex-direction: row;
-    bottom: var(--sp-md);
-    right: var(--sp-md);
+    left: 50%;
+    right: auto;
+    bottom: calc(var(--sp-md) + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    padding: var(--sp-xs);
+    background: var(--bg-raised);
+    background: color-mix(in srgb, var(--bg-raised) 86%, transparent);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 30px var(--shadow);
+    backdrop-filter: blur(10px);
   }
+  .tool-btn { width: 44px; height: 44px; }
   .chapter-sidebar { display: none; }
-  .modal-box { padding: var(--sp-lg); }
+  .modal-overlay {
+    align-items: flex-start;
+    padding: calc(var(--sp-md) + env(safe-area-inset-top)) var(--sp-md) calc(var(--sp-md) + env(safe-area-inset-bottom));
+  }
+  .modal-box {
+    padding: var(--sp-lg);
+    max-height: calc(100dvh - 2rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+  .modal-close { min-width: 44px; min-height: 44px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1708,7 +1732,7 @@ body {
 }
 .adapt-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   gap: var(--sp-md);
 }
 .adapt-card {
@@ -1753,7 +1777,7 @@ body {
    ESCENARIOS DE ROL
    ═══════════════════════════════════════════════════════════════════ */
 .rpg-header-actions { margin-bottom:var(--sp-xl); }
-.rpg-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--sp-lg); }
+.rpg-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:var(--sp-lg); }
 .rpg-card { background:var(--bg-surface);border:1px solid var(--border);padding:var(--sp-lg);cursor:pointer;transition:all var(--dur);position:relative; }
 .rpg-card::before { content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);opacity:0;transition:opacity var(--dur); }
 .rpg-card:hover { border-color:var(--border-light);transform:translateY(-2px);box-shadow:0 4px 16px var(--shadow); }
@@ -1863,7 +1887,7 @@ body {
    ═══════════════════════════════════════════════════════════════════ */
 .lexicon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: var(--sp-md);
 }
 .lexicon-card {
@@ -2038,3 +2062,33 @@ body {
 .note-textarea::placeholder { color: var(--text-dim); font-style: italic; }
 .note-actions { display: flex; gap: var(--sp-sm); margin-top: var(--sp-sm); }
 .note-saved-label { font-family: var(--font-mono); font-size: 0.62rem; color: var(--gold-dim); margin-top: var(--sp-xs); }
+
+
+/* Mobile touch hardening */
+@media (max-width: 600px) {
+  button,
+  input,
+  textarea,
+  .chapter-card,
+  .glossary-card,
+  .archive-file,
+  .search-result,
+  .adapt-card,
+  .rpg-card {
+    touch-action: manipulation;
+  }
+  button,
+  .nav-btn,
+  .filter-btn,
+  .btn-generate,
+  .btn-passage,
+  .btn-copy-gen,
+  .btn-export-gen,
+  .font-btn,
+  .focus-btn {
+    min-height: 44px;
+  }
+  input[type="search"], textarea {
+    font-size: 16px;
+  }
+}
